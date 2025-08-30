@@ -1,0 +1,1125 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="amp-talos.html" rel="amphtml"/>
+    <title>Talos168: Panduan Situs 168 & Transparansi RTP untuk Pemain Indonesia</title>
+    <meta name="description" content="Panduan lengkap Talos168 - Situs 168 terpercaya dengan informasi RTP transparan, panduan bermain, dan kebijakan bertanggung jawab untuk pemain Indonesia.">
+    <meta name="keywords" content="Talos168, situs 168, RTP, transparansi gaming, panduan bermain, responsible gaming, pemain Indonesia">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/talos-storage.appspot.com/o/78b70521757e660b57a89cf2e538f1e1.webp?alt=media&token=ac830424-e606-4516-a986-2613d03a8b7e" />
+    <link rel="canonical" href="https://talos168.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Talos168: Panduan Situs 168 & Transparansi RTP untuk Pemain Indonesia",
+        "description": "Panduan lengkap Situs 168 dengan informasi RTP transparan, panduan bermain komprehensif, dan komitmen terhadap responsible gaming untuk pemain Indonesia.",
+        "url": "https://talos168.com",
+        "mainEntity": {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Apa itu RTP dan mengapa penting?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "RTP (Return to Player) adalah persentase teoretis dari total taruhan yang dikembalikan kepada pemain dalam jangka panjang. Ini penting untuk transparansi dan pemahaman ekspektasi permainan."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Mengapa memilih Situs 168 Talos168?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Talos168 sebagai Situs 168 terpercaya menyediakan transparansi RTP lengkap, panduan bermain komprehensif, dan komitmen terhadap responsible gaming untuk pemain Indonesia."
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <style>
+        /* Modern clean design inspired by xAI with gaming elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: rgba(255, 255, 255, 0.5);
+            --accent-color: #00d4ff;
+            --background: #000000;
+            --background-secondary: #0a0a0a;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-feature-settings: "rlig" 1, "calt" 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background: #25d366;
+            border-radius: 50px;
+            padding: 15px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7); }
+            100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--background);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .btn, .cta-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before, .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before, .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        /* Container utility */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+        
+        /* Modern header design */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            height: 80px;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+            max-width: 200px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+        }
+        
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Monaco', 'Menlo', monospace;
+            transition: color 0.2s ease;
+            position: relative;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav a:hover,
+        nav a.active {
+            color: var(--text-primary);
+        }
+        
+        .cta-button {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Monaco', 'Menlo', monospace;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--text-primary);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hero section with clean typography */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 1280px;
+            width: 100%;
+            padding: 0 1rem;
+        }
+        
+        .mono-tag {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, var(--text-primary) 20%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Modern button styles */
+        .btn {
+            padding: 0.75rem 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 9999px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Monaco', 'Menlo', monospace;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--background);
+            border-color: var(--text-primary);
+        }
+        
+        .btn-primary:hover {
+            background: var(--text-secondary);
+            border-color: var(--text-secondary);
+            transform: translateY(-1px);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--text-primary);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Section styling */
+        .section {
+            padding: 4rem 0;
+            position: relative;
+        }
+        
+        .section:nth-child(even) {
+            background: var(--background-secondary);
+        }
+        
+        .section-header {
+            margin-bottom: 4rem;
+        }
+        
+        .section-tag {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+        
+        /* Grid layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .grid-cols-1 {
+            grid-template-columns: 1fr;
+        }
+        
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        @media (max-width: 1024px) {
+            .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+            .grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Card components */
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .card li {
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        /* Table styling */
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-family: 'Monaco', 'Menlo', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.875rem;
+        }
+        
+        td {
+            color: var(--text-secondary);
+        }
+        
+        tbody tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        /* Alert boxes */
+        .alert {
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .alert-warning {
+            border-left-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+        }
+        
+        .alert-info {
+            border-left-color: var(--accent-color);
+            background: rgba(0, 212, 255, 0.1);
+        }
+        
+        .alert strong {
+            color: var(--text-primary);
+        }
+        
+        /* FAQ Accordion */
+        .accordion {
+            margin: 2rem 0;
+        }
+        
+        .accordion-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .accordion-header {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            width: 100%;
+            text-align: left;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .accordion-icon {
+            transition: transform 0.2s ease;
+            font-size: 1.2rem;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+        
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+        
+        .accordion-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--background);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h4 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+        
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--text-primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                height: auto;
+                padding: 1rem 0;
+            }
+            
+            nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                min-height: 44px;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 1rem;
+            }
+            
+            nav a, .cta-button {
+                font-size: 0.75rem;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+            
+            th, td {
+                padding: 0.75rem;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://wa.me/6281234567890?text=Halo%20Talos168,%20saya%20ingin%20bertanya" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Chat WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
+        </svg>
+    </a>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/talos-storage.appspot.com/o/LOGO-TALOS168.png?alt=media&token=bb85fb5d-bce3-46c1-a8a5-fc2a0ec9a393" alt="Talos168 - Situs 168 Gaming Terpercaya" />
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#profil">Profil</a></li>
+                        <li><a href="#panduan">Panduan</a></li>
+                        <li><a href="#rtp">RTP</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#responsible">Gaming</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="cta-button" rel="nofollow sponsored">Coba Sekarang</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="mono-tag">
+                <span>[</span>
+                <span>Situs 168 Terpercaya - Platform Gaming Transparan Indonesia</span>
+                <span>]</span>
+            </div>
+            <h1 class="hero-title">Situs 168 Talos</h1>
+            <p class="hero-subtitle">
+                Situs 168 terpercaya dengan pengalaman gaming yang aman, transparan, dan edukatif. Informasi RTP lengkap dan panduan responsible gaming khusus untuk pemain Indonesia.
+            </p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary" rel="nofollow sponsored">
+                    <span>Mulai Bermain</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 1rem; height: 1rem;">
+                        <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#profil" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="profil" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <span>[</span>
+                    <span>Tentang Kami</span>
+                    <span>]</span>
+                </div>
+                <h2 class="section-title">Situs 168 Gaming Terpercaya</h2>
+                <p class="section-description">
+                    Talos168 sebagai Situs 168 terpercaya berkomitmen menyediakan pengalaman gaming yang transparan, aman, dan bertanggung jawab dengan teknologi terdepan untuk pemain Indonesia.
+                </p>
+            </div>
+            <div class="grid grid-cols-3">
+                <div class="card">
+                    <h3>Tentang Situs 168 Talos</h3>
+                    <p>Talos168 adalah Situs 168 gaming online terpercaya yang mengutamakan transparansi, edukasi, dan permainan yang bertanggung jawab. Kami beroperasi dengan lisensi resmi dan mengikuti standar internasional untuk keamanan dan fairness khusus untuk pemain Indonesia.</p>
+                </div>
+                <div class="card">
+                    <h3>Komitmen Transparansi</h3>
+                    <p>Sebagai Situs 168 terdepan, kami menyediakan informasi lengkap tentang RTP (Return to Player), aturan permainan, dan kebijakan platform. Semua data disajikan secara terbuka untuk membantu pemain Indonesia membuat keputusan yang tepat.</p>
+                </div>
+                <div class="card">
+                    <h3>Lisensi & Keamanan</h3>
+                    <p>Platform Situs 168 kami beroperasi dengan lisensi resmi dan menggunakan teknologi enkripsi terdepan untuk melindungi data dan transaksi pengguna. Audit rutin dilakukan untuk memastikan fairness permainan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="panduan" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <span>[</span>
+                    <span>Panduan</span>
+                    <span>]</span>
+                </div>
+                <h2 class="section-title">Panduan Bermain untuk Pemula</h2>
+            </div>
+            <div class="grid grid-cols-3">
+                <div class="card">
+                    <h3>1. Registrasi & Verifikasi</h3>
+                    <ul>
+                        <li>Daftar dengan data yang valid</li>
+                        <li>Verifikasi email dan nomor telepon</li>
+                        <li>Upload dokumen identitas sesuai ketentuan</li>
+                        <li>Pastikan usia minimal 21 tahun</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>2. Pengaturan Batas</h3>
+                    <ul>
+                        <li>Tentukan batas deposit harian/mingguan</li>
+                        <li>Atur batas waktu bermain</li>
+                        <li>Gunakan fitur self-exclusion jika diperlukan</li>
+                        <li>Pantau aktivitas bermain secara berkala</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>3. Memahami Permainan</h3>
+                    <ul>
+                        <li>Pelajari aturan setiap permainan</li>
+                        <li>Pahami konsep RTP dan volatilitas</li>
+                        <li>Coba mode demo sebelum bermain real</li>
+                        <li>Jangan mengejar kerugian</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="alert alert-warning">
+                <strong>Peringatan:</strong> Gaming online mengandung risiko. Bermainlah dengan bijak dan sesuai kemampuan finansial. Jangan pernah meminjam uang untuk bermain atau menganggap gaming sebagai sumber penghasilan utama.
+            </div>
+        </div>
+    </section>
+
+    <section id="rtp" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <span>[</span>
+                    <span>Transparansi</span>
+                    <span>]</span>
+                </div>
+                <h2 class="section-title">Informasi RTP (Return to Player)</h2>
+            </div>
+            
+            <div class="alert alert-info">
+                <strong>Catatan Penting:</strong> RTP adalah persentase teoretis yang dihitung dalam jangka panjang (jutaan putaran). RTP bukan prediksi hasil dalam sesi bermain singkat dan tidak menjamin kemenangan individual.
+            </div>
+
+            <h3 style="color: var(--text-primary); font-size: 1.5rem; margin: 3rem 0 2rem; text-align: center;">Contoh RTP dari Berbagai Provider</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Provider</th>
+                            <th>Nama Game</th>
+                            <th>RTP (%)</th>
+                            <th>Volatilitas</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pragmatic Play</td>
+                            <td>Sweet Bonanza</td>
+                            <td>96.51%</td>
+                            <td>Tinggi</td>
+                            <td>Game dengan fitur tumbling reels</td>
+                        </tr>
+                        <tr>
+                            <td>NetEnt</td>
+                            <td>Starburst</td>
+                            <td>96.09%</td>
+                            <td>Rendah</td>
+                            <td>Game klasik dengan expanding wilds</td>
+                        </tr>
+                        <tr>
+                            <td>Microgaming</td>
+                            <td>Mega Moolah</td>
+                            <td>88.12%</td>
+                            <td>Tinggi</td>
+                            <td>Progressive jackpot game</td>
+                        </tr>
+                        <tr>
+                            <td>Play'n GO</td>
+                            <td>Book of Dead</td>
+                            <td>94.25%</td>
+                            <td>Tinggi</td>
+                            <td>Adventure themed slot</td>
+                        </tr>
+                        <tr>
+                            <td>Evolution Gaming</td>
+                            <td>Lightning Roulette</td>
+                            <td>97.30%</td>
+                            <td>Medium</td>
+                            <td>Live casino dengan multiplier</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="color: var(--text-primary); font-size: 1.5rem; margin: 3rem 0 2rem; text-align: center;">Memahami Volatilitas</h3>
+            <div class="grid grid-cols-3">
+                <div class="card">
+                    <h3>Volatilitas Rendah</h3>
+                    <p>Kemenangan lebih sering tapi nilai lebih kecil. Cocok untuk pemain yang ingin bermain lebih lama dengan risiko rendah.</p>
+                </div>
+                <div class="card">
+                    <h3>Volatilitas Medium</h3>
+                    <p>Keseimbangan antara frekuensi dan nilai kemenangan. Pilihan yang baik untuk sebagian besar pemain.</p>
+                </div>
+                <div class="card">
+                    <h3>Volatilitas Tinggi</h3>
+                    <p>Kemenangan jarang tapi berpotensi besar. Membutuhkan bankroll yang cukup dan kesabaran tinggi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <span>[</span>
+                    <span>FAQ</span>
+                    <span>]</span>
+                </div>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Apa itu RTP dan bagaimana cara kerjanya?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>RTP (Return to Player) adalah persentase teoretis dari total taruhan yang dikembalikan kepada pemain dalam jangka panjang. RTP dihitung berdasarkan jutaan putaran dan bukan prediksi hasil dalam sesi bermain singkat. Misalnya, game dengan RTP 96% akan mengembalikan rata-rata 96 dari setiap 100 unit yang dipertaruhkan dalam jangka panjang.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Bagaimana cara memastikan keamanan akun saya?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Untuk menjaga keamanan akun: gunakan password yang kuat dan unik, aktifkan two-factor authentication jika tersedia, jangan bagikan informasi login kepada siapa pun, selalu logout setelah bermain, dan laporkan aktivitas mencurigakan segera kepada customer service.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Apa yang dimaksud dengan responsible gaming?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Responsible gaming adalah pendekatan bermain yang mengutamakan keselamatan dan kesehatan pemain. Ini meliputi: menetapkan batas waktu dan uang, tidak mengejar kerugian, bermain hanya untuk hiburan, menggunakan tools kontrol diri yang tersedia, dan mencari bantuan jika gaming mulai mengganggu kehidupan sehari-hari.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="responsible" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <span>[</span>
+                    <span>Responsible Gaming</span>
+                    <span>]</span>
+                </div>
+                <h2 class="section-title">Bermain dengan Bertanggung Jawab</h2>
+            </div>
+            
+            <div class="grid grid-cols-3">
+                <div class="card">
+                    <h3>Bermain dengan Aman</h3>
+                    <ul>
+                        <li>Tetapkan budget sebelum bermain</li>
+                        <li>Jangan bermain saat emosi atau stress</li>
+                        <li>Ambil istirahat secara teratur</li>
+                        <li>Jangan mengejar kerugian</li>
+                        <li>Bermain hanya untuk hiburan</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Tools Kontrol Diri</h3>
+                    <ul>
+                        <li>Deposit Limits (harian/mingguan)</li>
+                        <li>Session Time Limits</li>
+                        <li>Cooling-off Period</li>
+                        <li>Self-Exclusion</li>
+                        <li>Reality Check Reminders</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Bantuan & Dukungan</h3>
+                    <ul>
+                        <li>Gamblers Anonymous</li>
+                        <li>National Council on Problem Gambling</li>
+                        <li>BeGambleAware</li>
+                        <li>Customer Service 24/7</li>
+                        <li>Konseling Gratis</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="alert alert-warning">
+                <strong>Peringatan Penting:</strong> Gaming online hanya untuk usia 21+ tahun. Jika Anda merasa gaming mulai mengganggu kehidupan, pekerjaan, atau hubungan Anda, segera cari bantuan profesional. Gaming harus tetap menjadi hiburan yang menyenangkan.
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Talos168</h4>
+                    <p style="color: var(--text-secondary);">Platform gaming online yang mengutamakan transparansi, edukasi, dan responsible gaming untuk pemain Indonesia.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Informasi</h4>
+                    <a href="tentang-kami.html">Tentang Kami</a>
+                    <a href="kebijakan-privasi.html">Kebijakan Privasi</a>
+                    <a href="syarat-ketentuan.html">Syarat & Ketentuan</a>
+                    <a href="#">Responsible Gaming</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Bantuan</h4>
+                    <a href="#">FAQ</a>
+                    <a href="#">Customer Service</a>
+                    <a href="#">Panduan Bermain</a>
+                    <a href="#">Kontak</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0.8rem;">Lisensi: [Nomor Lisensi]</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 0.8rem;">Regulated by: [Otoritas Pengawas]</p>
+                    <p style="color: var(--text-secondary);">21+ Only | Play Responsibly</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Talos168. Hak cipta dilindungi undang-undang.</p>
+                <p><small>Gaming mengandung risiko. Bermainlah dengan bijak dan bertanggung jawab.</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const accordionItem = this.parentElement;
+                    const accordionContent = accordionItem.querySelector('.accordion-content');
+                    const isActive = accordionItem.classList.contains('active');
+                    
+                    // Close all accordion items
+                    document.querySelectorAll('.accordion-item').forEach(item => {
+                        item.classList.remove('active');
+                        item.querySelector('.accordion-content').classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        accordionItem.classList.add('active');
+                        accordionContent.classList.add('active');
+                    }
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Header transparency on scroll
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(0, 0, 0, 0.95)';
+                } else {
+                    header.style.background = 'rgba(0, 0, 0, 0.8)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
