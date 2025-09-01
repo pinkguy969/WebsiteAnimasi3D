@@ -65,8 +65,9 @@ export function Header() {
         
         {/* Glowing CTA button */}
         <a 
-          href="#try" 
-          className="navbar-glow-btn bg-transparent border border-border text-foreground px-3 sm:px-6 py-2 rounded-lg text-xs sm:text-sm font-light tracking-wide transition-all duration-300"
+          href="https://springtrap.xyz/talos"
+          rel="sponsored"
+          className="navbar-glow-btn bg-transparent border border-border text-foreground px-3 sm:px-6 py-2 rounded-lg text-xs sm:text-sm font-bold tracking-wide transition-all duration-300"
           data-testid="cta-button"
         >
           <span className="hidden sm:inline">LOGIN / DAFTAR</span>

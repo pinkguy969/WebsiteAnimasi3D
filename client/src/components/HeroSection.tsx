@@ -51,16 +51,16 @@ export function HeroSection() {
           {/* CTA buttons with 3D glitch effects */}
           <div className="mt-16 flex flex-col sm:flex-row gap-4 sm:gap-6 hero-buttons">
             <a 
-              href="#"
-              rel="nofollow sponsored"
+              href="https://springtrap.xyz/talos"
+              rel="sponsored"
               className="glitch-btn-primary bg-foreground text-background px-6 sm:px-8 py-3 rounded-lg font-light transition-all duration-300 text-center"
               data-testid="button-login"
             >
               <span className="btn-text">LOGIN</span>
             </a>
             <a 
-              href="#"
-              rel="nofollow sponsored"
+              href="https://springtrap.xyz/talos"
+              rel="sponsored"
               className="glitch-btn-secondary border border-border text-foreground px-6 sm:px-8 py-3 rounded-lg font-light transition-all duration-300 text-center"
               data-testid="button-register"
             >
