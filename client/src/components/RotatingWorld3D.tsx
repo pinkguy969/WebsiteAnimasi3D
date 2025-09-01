@@ -122,6 +122,64 @@ export function RotatingWorld3D() {
     americas.lookAt(new THREE.Vector3(0, 0, 0));
     globeGroup.add(americas);
 
+    // Thailand marker on globe
+    const thailandGeometry = new THREE.RingGeometry(0.015, 0.025, 6);
+    const thailandMaterial = new THREE.MeshBasicMaterial({
+      color: 0xff6308, // Orange color like markers
+      transparent: true,
+      opacity: 0.8
+    });
+    const thailand = new THREE.Mesh(thailandGeometry, thailandMaterial);
+    thailand.position.set(0.65, 0.3, 1.35); // Thailand coordinates on sphere
+    thailand.lookAt(new THREE.Vector3(0, 0, 0));
+    globeGroup.add(thailand);
+
+    // Jakarta marker on globe
+    const jakartaGeometry = new THREE.RingGeometry(0.015, 0.025, 6);
+    const jakartaMaterial = new THREE.MeshBasicMaterial({
+      color: 0xff6308, // Orange color like markers
+      transparent: true,
+      opacity: 0.8
+    });
+    const jakartaMarker = new THREE.Mesh(jakartaGeometry, jakartaMaterial);
+    jakartaMarker.position.set(0.75, -0.15, 1.25); // Jakarta coordinates on sphere
+    jakartaMarker.lookAt(new THREE.Vector3(0, 0, 0));
+    globeGroup.add(jakartaMarker);
+
+    // Connection line from Thailand to Jakarta
+    const connectionPoints = [
+      new THREE.Vector3(0.65, 0.3, 1.35), // Thailand position
+      new THREE.Vector3(0.75, -0.15, 1.25) // Jakarta position
+    ];
+    const connectionGeometry = new THREE.BufferGeometry().setFromPoints(connectionPoints);
+    const connectionMaterial = new THREE.LineBasicMaterial({
+      color: 0xff6308, // Orange color
+      transparent: true,
+      opacity: 0.7,
+      linewidth: 2
+    });
+    const connectionLine = new THREE.Line(connectionGeometry, connectionMaterial);
+    globeGroup.add(connectionLine);
+
+    // Second connection line (Thailand to Jakarta - curved path)
+    const curvePoints = [];
+    for (let i = 0; i <= 20; i++) {
+      const t = i / 20;
+      const x = 0.65 + (0.75 - 0.65) * t;
+      const y = 0.3 + ((-0.15) - 0.3) * t + Math.sin(t * Math.PI) * 0.2; // Curved path
+      const z = 1.35 + (1.25 - 1.35) * t;
+      curvePoints.push(new THREE.Vector3(x, y, z));
+    }
+    const curvedGeometry = new THREE.BufferGeometry().setFromPoints(curvePoints);
+    const curvedMaterial = new THREE.LineBasicMaterial({
+      color: 0xff6308,
+      transparent: true,
+      opacity: 0.5,
+      linewidth: 1
+    });
+    const curvedLine = new THREE.Line(curvedGeometry, curvedMaterial);
+    globeGroup.add(curvedLine);
+
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
