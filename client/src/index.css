@@ -255,25 +255,21 @@
   }
 }
 
-/* Button Base Styles - Static when idle */
+/* Constantly Glowing Buttons - Ultra Bright */
 .glitch-btn-primary {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  box-shadow: 
+    0 0 40px rgba(255, 255, 255, 0.6),
+    0 0 80px rgba(255, 255, 255, 0.3),
+    0 0 120px rgba(255, 255, 255, 0.1),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
+  animation: tv-flicker 3s infinite;
+  border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
-.glitch-btn-secondary {
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-}
-
-/* TV Static Effect - Only on Active (Click) */
-.glitch-btn-primary:active {
-  animation: tv-static 0.5s ease-out, tv-flicker 0.3s infinite;
-}
-
-.glitch-btn-primary:active::before {
+.glitch-btn-primary::before {
   content: '';
   position: absolute;
   top: 0;
@@ -285,40 +281,58 @@
       0deg,
       transparent,
       transparent 1px,
-      rgba(0, 0, 0, 0.1) 2px,
-      rgba(0, 0, 0, 0.1) 3px
+      rgba(255, 255, 255, 0.1) 2px,
+      rgba(255, 255, 255, 0.1) 3px
     ),
     radial-gradient(
       circle at 20% 80%,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(0, 0, 0, 0.1) 0%,
+      rgba(255, 255, 255, 0.2) 0%,
       transparent 50%
     );
-  animation: tv-scanlines 0.1s infinite linear, tv-noise 0.2s infinite;
+  animation: tv-scanlines 2s infinite linear;
   pointer-events: none;
   border-radius: 0.5rem;
   mix-blend-mode: overlay;
 }
 
-.glitch-btn-primary:active .btn-text {
-  animation: tv-flicker 0.15s infinite;
+.glitch-btn-primary .btn-text {
+  color: #000000;
+  font-weight: 600;
   text-shadow: 
-    2px 0 0 #ff0000,
-    -2px 0 0 #00ffff,
-    0 2px 0 #ffff00,
-    0 -2px 0 #ff00ff;
+    0 0 15px rgba(255, 255, 255, 0.8),
+    0 0 30px rgba(255, 255, 255, 0.4);
 }
 
-.glitch-btn-secondary:active {
-  animation: tv-static 0.4s ease-out;
-  border-color: rgba(255, 255, 255, 0.6);
+.glitch-btn-primary:hover {
+  box-shadow: 
+    0 0 40px rgba(255, 255, 255, 0.5),
+    0 0 80px rgba(255, 255, 255, 0.2),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
+  animation: tv-static 0.5s ease-out, tv-flicker 0.3s infinite;
 }
 
-.glitch-btn-secondary:active::after {
+.glitch-btn-primary:hover .btn-text {
+  text-shadow: 
+    1px 0 0 #ff0000,
+    -1px 0 0 #00ffff,
+    0 1px 0 #ffff00,
+    0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.glitch-btn-secondary {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.4),
+    0 0 60px rgba(255, 255, 255, 0.2),
+    0 0 90px rgba(0, 255, 255, 0.1),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+  animation: tv-flicker 4s infinite;
+}
+
+.glitch-btn-secondary::after {
   content: '';
   position: absolute;
   top: -1px;
@@ -330,21 +344,39 @@
       90deg,
       transparent,
       transparent 2px,
-      rgba(0, 255, 255, 0.1) 3px,
-      rgba(0, 255, 255, 0.1) 4px
+      rgba(0, 255, 255, 0.2) 3px,
+      rgba(0, 255, 255, 0.2) 4px
     );
-  animation: tv-scanlines 0.08s infinite linear, tv-noise 0.25s infinite;
+  animation: tv-scanlines 3s infinite linear;
   pointer-events: none;
   border-radius: 0.5rem;
   z-index: -1;
 }
 
-.glitch-btn-secondary:active .btn-text {
-  animation: tv-flicker 0.2s infinite;
+.glitch-btn-secondary .btn-text {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 
+    0 0 15px rgba(0, 255, 255, 0.8),
+    0 0 30px rgba(255, 255, 255, 0.5),
+    0 0 45px rgba(0, 255, 255, 0.3);
+}
+
+.glitch-btn-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.4),
+    0 0 60px rgba(255, 255, 255, 0.2),
+    inset 0 0 25px rgba(0, 255, 255, 0.1);
+  animation: tv-static 0.4s ease-out, tv-flicker 2s infinite;
+}
+
+.glitch-btn-secondary:hover .btn-text {
   text-shadow: 
     1px 0 0 #00ffff,
     -1px 0 0 #ff0080,
-    0 1px 0 #80ff00;
+    0 1px 0 #80ff00,
+    0 0 20px rgba(0, 255, 255, 0.8);
 }
 
 .btn-text {
