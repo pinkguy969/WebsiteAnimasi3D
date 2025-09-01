@@ -24,46 +24,41 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="hero-container min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-black">
+    <section className="hero-container min-h-screen flex flex-col justify-center items-start relative overflow-hidden bg-background">
       {/* 3D Light Beam Background */}
       <LightBeam3D mousePosition={mousePosition} />
       
-      {/* Hero Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        <div className="hero-tag font-mono text-sm text-zinc-400 uppercase tracking-wider mb-8">
-          SITUS 168 TERPERCAYA
-        </div>
-        
-        <h1 className="hero-title text-6xl md:text-8xl lg:text-9xl font-black leading-none mb-8 tracking-tight">
-          <span className="bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
-            Understand
-          </span>
-          <br />
-          <span className="bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
-            the Gaming
-          </span>
-        </h1>
-        
-        <p className="hero-subtitle text-lg text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Panduan lengkap Talos168 dengan informasi RTP transparan, 
-          panduan bermain komprehensif, dan komitmen terhadap responsible gaming.
-        </p>
-        
-        <div className="hero-buttons flex gap-4 flex-wrap justify-center items-center">
-          <button 
-            className="btn-primary bg-white text-black px-8 py-3 rounded-full font-semibold uppercase tracking-wider text-sm font-mono hover:bg-zinc-200 hover:-translate-y-0.5 hover:shadow-xl transition-all flex items-center gap-3"
-            data-testid="button-start-playing"
-          >
-            <span>MULAI BERMAIN</span>
-            <ArrowRight size={20} />
-          </button>
+      {/* Hero Content - x.ai minimal style */}
+      <div className="relative z-10 max-w-6xl mx-auto px-8 w-full">
+        <div className="max-w-2xl">
+          {/* Mission tag */}
+          <div className="hero-tag font-mono text-xs text-muted-foreground uppercase tracking-[0.2em] mb-12 opacity-70">
+            [ MISI KAMI ]
+          </div>
           
-          <button 
-            className="btn-secondary bg-transparent border border-zinc-800 text-white px-8 py-3 rounded-full font-semibold uppercase tracking-wider text-sm font-mono hover:bg-white/10 hover:border-white transition-all"
-            data-testid="button-view-rtp"
-          >
-            <span>LIHAT RTP</span>
-          </button>
+          {/* Main heading - ultra clean x.ai style */}
+          <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-light leading-[0.9] mb-8 tracking-[-0.02em]">
+            <span className="text-foreground block">
+              Memahami
+            </span>
+            <span className="text-muted-foreground block">
+              Dunia Gaming
+            </span>
+          </h1>
+          
+          {/* No subtitle needed - x.ai keeps it very minimal */}
+          
+          {/* Single minimal CTA */}
+          <div className="mt-16">
+            <a 
+              href="#games"
+              className="inline-flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors text-lg font-light"
+              data-testid="button-explore"
+            >
+              <span>Jelajahi dunia gaming kami</span>
+              <ArrowRight size={20} className="opacity-60" />
+            </a>
+          </div>
         </div>
       </div>
     </section>

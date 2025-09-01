@@ -1,54 +1,49 @@
-import { FileText, CheckCircle, Clock } from "lucide-react";
-
-const features = [
-  {
-    icon: FileText,
-    title: "RTP Real-time",
-    description: "Data RTP yang diperbarui secara real-time untuk semua game."
-  },
-  {
-    icon: CheckCircle,
-    title: "Verified Games",
-    description: "Semua permainan telah diverifikasi dan diaudit secara independen."
-  },
-  {
-    icon: Clock,
-    title: "24/7 Support",
-    description: "Dukungan pelanggan 24/7 untuk membantu semua kebutuhan Anda."
-  }
-];
-
 export function FeatureSection() {
   return (
-    <section className="py-20 bg-zinc-950 relative z-10">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white" data-testid="text-features-title">
-            Transparansi RTP
+    <section className="py-32 bg-background relative z-10 border-t border-border">
+      <div className="max-w-6xl mx-auto px-8">
+        {/* Ultra minimal section intro */}
+        <div className="mb-24">
+          <div className="font-mono text-xs text-muted-foreground uppercase tracking-[0.2em] mb-8 opacity-70">
+            [ TRANSPARENCY ]
+          </div>
+          <h2 className="text-4xl md:text-5xl font-light leading-tight text-foreground max-w-2xl" data-testid="text-features-title">
+            Building the future of
+            <span className="text-muted-foreground block">transparent gaming</span>
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto" data-testid="text-features-description">
-            Informasi RTP real-time untuk semua permainan dengan data yang akurat dan transparan.
-          </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="bg-zinc-900 p-6 rounded-lg border border-zinc-800 hover:border-zinc-700 transition-colors"
-              data-testid={`card-feature-${index}`}
-            >
-              <div className="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-4">
-                <feature.icon size={24} className="text-black" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-white" data-testid={`text-feature-title-${index}`}>
-                {feature.title}
-              </h3>
-              <p className="text-zinc-400" data-testid={`text-feature-description-${index}`}>
-                {feature.description}
-              </p>
-            </div>
-          ))}
+        {/* Minimal content blocks - x.ai style */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="space-y-4" data-testid="card-feature-0">
+            <div className="w-8 h-8 bg-foreground rounded-full opacity-20"></div>
+            <h3 className="text-xl font-light text-foreground" data-testid="text-feature-title-0">
+              Real-time RTP
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-feature-description-0">
+              Live transparency data for all gaming experiences with verified authenticity.
+            </p>
+          </div>
+          
+          <div className="space-y-4" data-testid="card-feature-1">
+            <div className="w-8 h-8 bg-foreground rounded-full opacity-20"></div>
+            <h3 className="text-xl font-light text-foreground" data-testid="text-feature-title-1">
+              Verified Systems
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-feature-description-1">
+              Independently audited algorithms ensuring fairness and reliability.
+            </p>
+          </div>
+          
+          <div className="space-y-4" data-testid="card-feature-2">
+            <div className="w-8 h-8 bg-foreground rounded-full opacity-20"></div>
+            <h3 className="text-xl font-light text-foreground" data-testid="text-feature-title-2">
+              Global Standards
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-feature-description-2">
+              Adherence to international responsible gaming protocols.
+            </p>
+          </div>
         </div>
       </div>
     </section>

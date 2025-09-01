@@ -28,29 +28,29 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
     <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Light Beam Container with 3D perspective */}
       <div className="light-beam-container absolute inset-0" style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}>
-        {/* Main Extended Light Beam */}
+        {/* Ultra Minimal Light Beam - x.ai style */}
         <div 
           ref={lightBeamRef}
-          className="light-beam absolute top-1/2 -right-1/4 w-[250%] h-2 transform -translate-y-1/2"
+          className="light-beam absolute top-1/2 -right-1/4 w-[300%] h-1 transform -translate-y-1/2"
           style={{
             background: `linear-gradient(
               90deg,
               transparent 0%,
-              rgba(0, 212, 255, 0.1) 10%,
-              rgba(255, 255, 255, 0.8) 40%,
-              rgba(255, 255, 255, 1) 50%,
-              rgba(255, 255, 255, 0.8) 60%,
-              rgba(0, 212, 255, 0.1) 90%,
+              rgba(255, 255, 255, 0.05) 15%,
+              rgba(255, 255, 255, 0.3) 45%,
+              rgba(255, 255, 255, 0.6) 50%,
+              rgba(255, 255, 255, 0.3) 55%,
+              rgba(255, 255, 255, 0.05) 85%,
               transparent 100%
             )`,
-            transform: 'translateY(-50%) rotateY(-15deg) rotateZ(-2deg)',
-            filter: 'blur(0.5px)',
+            transform: 'translateY(-50%) rotateY(-12deg) rotateZ(-1deg)',
+            filter: 'blur(0.3px)',
             boxShadow: `
-              0 0 20px rgba(255, 255, 255, 0.6),
-              0 0 40px rgba(0, 212, 255, 0.4),
-              0 0 80px rgba(255, 255, 255, 0.2)
+              0 0 30px rgba(255, 255, 255, 0.3),
+              0 0 60px rgba(255, 255, 255, 0.1),
+              0 0 120px rgba(255, 255, 255, 0.05)
             `,
-            animation: 'lightBeamPulse 4s ease-in-out infinite alternate'
+            animation: 'lightBeamPulse 6s ease-in-out infinite alternate'
           }}
         >
           {/* Inner Glow Layer */}

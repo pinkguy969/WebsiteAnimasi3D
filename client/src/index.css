@@ -6,42 +6,43 @@
 @tailwind utilities;
 
 :root {
+  /* x.ai inspired color system - ultra minimal */
   --background: hsl(0, 0%, 0%);
-  --foreground: hsl(0, 0%, 98%);
-  --card: hsl(0, 0%, 3%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 2%);
   --card-foreground: hsl(0, 0%, 98%);
   --popover: hsl(0, 0%, 0%);
   --popover-foreground: hsl(0, 0%, 98%);
-  --primary: hsl(195, 100%, 50%);
+  --primary: hsl(0, 0%, 100%);
   --primary-foreground: hsl(0, 0%, 0%);
-  --secondary: hsl(0, 0%, 10%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --muted: hsl(0, 0%, 15%);
-  --muted-foreground: hsl(0, 0%, 63%);
-  --accent: hsl(195, 100%, 50%);
+  --secondary: hsl(0, 0%, 5%);
+  --secondary-foreground: hsl(0, 0%, 85%);
+  --muted: hsl(0, 0%, 8%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --accent: hsl(0, 0%, 100%);
   --accent-foreground: hsl(0, 0%, 0%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(0, 0%, 15%);
-  --input: hsl(0, 0%, 15%);
-  --ring: hsl(195, 100%, 50%);
-  --chart-1: hsl(195, 100%, 50%);
-  --chart-2: hsl(160, 100%, 36%);
-  --chart-3: hsl(42, 93%, 56%);
-  --chart-4: hsl(147, 79%, 42%);
-  --chart-5: hsl(341, 75%, 51%);
-  --sidebar: hsl(0, 0%, 3%);
+  --border: hsl(0, 0%, 10%);
+  --input: hsl(0, 0%, 8%);
+  --ring: hsl(0, 0%, 100%);
+  --chart-1: hsl(0, 0%, 100%);
+  --chart-2: hsl(0, 0%, 70%);
+  --chart-3: hsl(0, 0%, 50%);
+  --chart-4: hsl(0, 0%, 30%);
+  --chart-5: hsl(0, 0%, 15%);
+  --sidebar: hsl(0, 0%, 2%);
   --sidebar-foreground: hsl(0, 0%, 98%);
-  --sidebar-primary: hsl(195, 100%, 50%);
+  --sidebar-primary: hsl(0, 0%, 100%);
   --sidebar-primary-foreground: hsl(0, 0%, 0%);
-  --sidebar-accent: hsl(0, 0%, 15%);
-  --sidebar-accent-foreground: hsl(195, 100%, 50%);
-  --sidebar-border: hsl(0, 0%, 15%);
-  --sidebar-ring: hsl(195, 100%, 50%);
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: 'JetBrains Mono', 'Monaco', 'Menlo', monospace;
-  --radius: 0.5rem;
+  --sidebar-accent: hsl(0, 0%, 8%);
+  --sidebar-accent-foreground: hsl(0, 0%, 100%);
+  --sidebar-border: hsl(0, 0%, 10%);
+  --sidebar-ring: hsl(0, 0%, 100%);
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', sans-serif;
+  --font-serif: 'Times New Roman', serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Cascadia Code', monospace;
+  --radius: 8px;
 }
 
 .dark {
@@ -85,15 +86,15 @@
   }
 }
 
-/* Extended 3D Light Beam Animations */
+/* x.ai inspired subtle animations */
 @keyframes lightBeamPulse {
   0% {
-    opacity: 0.7;
-    transform: translateY(-50%) rotateY(-15deg) rotateZ(-2deg) scaleX(1);
+    opacity: 0.4;
+    transform: translateY(-50%) rotateY(-12deg) rotateZ(-1deg) scaleX(1);
   }
   100% {
-    opacity: 1;
-    transform: translateY(-50%) rotateY(-15deg) rotateZ(-2deg) scaleX(1.05);
+    opacity: 0.8;
+    transform: translateY(-50%) rotateY(-12deg) rotateZ(-1deg) scaleX(1.02);
   }
 }
 
@@ -143,42 +144,64 @@
   }
 }
 
-/* Enhanced hover effects */
+/* x.ai style enhanced interactions */
 .hero-container:hover .light-beam {
-  animation-duration: 2s;
+  animation-duration: 4s;
 }
 
-/* Mobile optimizations */
-@media (max-width: 768px) {
+/* x.ai responsive design - ultra clean */
+@media (max-width: 1024px) {
   .light-beam {
-    width: 300% !important;
-    right: -40% !important;
-    height: 6px !important;
+    width: 250% !important;
+    height: 0.5px !important;
+    opacity: 0.7;
+  }
+  
+  .hero-title {
+    font-size: clamp(3rem, 10vw, 6rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .hero-content {
+    max-width: none !important;
+    padding: 0 1rem !important;
+  }
+  
+  .light-beam {
+    width: 200% !important;
+    right: -20% !important;
+    height: 1px !important;
+    opacity: 0.5;
   }
 
   .ambient-glow {
-    width: 120% !important;
-    right: -30% !important;
+    width: 100% !important;
+    right: -10% !important;
+    opacity: 0.3;
   }
 
   .particle {
-    width: 1px !important;
-    height: 1px !important;
+    display: none; /* Hide particles on mobile for cleaner look */
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 12vw, 6rem) !important;
+    font-size: clamp(2.5rem, 12vw, 4rem) !important;
+    margin-bottom: 2rem !important;
   }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 1rem;
+  
+  /* Mobile navigation */
+  .header-content {
+    padding: 1rem 0 !important;
   }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-    max-width: 280px;
+  
+  .hero-content .max-w-2xl {
+    max-width: none !important;
   }
 }
 

@@ -1,19 +1,19 @@
-import { useState } from "react";
-
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-zinc-800">
-      <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-        <a href="#" className="text-xl font-bold text-white" data-testid="logo-link">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border">
+      <div className="flex justify-between items-center px-8 py-6 max-w-6xl mx-auto">
+        {/* Ultra minimal logo - x.ai style */}
+        <a href="#" className="text-2xl font-light text-foreground tracking-tight" data-testid="logo-link">
           TALOS168
         </a>
         
+        {/* Minimal navigation */}
         <nav className="hidden md:block">
-          <ul className="flex gap-8 list-none">
+          <ul className="flex gap-12 list-none">
             <li>
               <a 
                 href="#games" 
-                className="text-zinc-400 hover:text-white transition-colors text-sm uppercase tracking-wider font-mono font-medium"
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
                 data-testid="nav-games"
               >
                 GAMES
@@ -22,7 +22,7 @@ export function Header() {
             <li>
               <a 
                 href="#rtp" 
-                className="text-zinc-400 hover:text-white transition-colors text-sm uppercase tracking-wider font-mono font-medium"
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
                 data-testid="nav-rtp"
               >
                 RTP
@@ -31,30 +31,49 @@ export function Header() {
             <li>
               <a 
                 href="#guide" 
-                className="text-zinc-400 hover:text-white transition-colors text-sm uppercase tracking-wider font-mono font-medium"
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
                 data-testid="nav-guide"
               >
-                GUIDE
+                PANDUAN
               </a>
             </li>
             <li>
               <a 
                 href="#support" 
-                className="text-zinc-400 hover:text-white transition-colors text-sm uppercase tracking-wider font-mono font-medium"
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
                 data-testid="nav-support"
               >
-                SUPPORT
+                TENTANG
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#careers" 
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
+                data-testid="nav-careers"
+              >
+                CAREERS
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#news" 
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
+                data-testid="nav-news"
+              >
+                NEWS
               </a>
             </li>
           </ul>
         </nav>
         
+        {/* Simple CTA button */}
         <a 
           href="#try" 
-          className="bg-transparent border border-zinc-800 text-white px-4 py-2 rounded-full text-sm uppercase tracking-wider font-mono font-semibold hover:bg-white/10 hover:border-white transition-all"
+          className="bg-transparent border border-border text-foreground px-6 py-2 rounded-lg text-sm font-light tracking-wide hover:bg-muted hover:border-foreground transition-all"
           data-testid="cta-button"
         >
-          TRY NOW
+          MAIN SEKARANG
         </a>
       </div>
     </header>
