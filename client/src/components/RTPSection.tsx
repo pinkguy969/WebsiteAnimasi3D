@@ -31,7 +31,7 @@ export function RTPSection() {
             </div>
             
             {/* 3D Rotating World */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
               <RotatingWorld3D />
             </div>
           </div>

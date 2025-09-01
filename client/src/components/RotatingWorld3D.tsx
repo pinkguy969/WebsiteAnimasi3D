@@ -41,7 +41,7 @@ export function RotatingWorld3D() {
         // Get container dimensions for responsive sizing
         const containerWidth = mountRef.current.clientWidth;
         const containerHeight = mountRef.current.clientHeight;
-        const size = Math.min(containerWidth, containerHeight, 400);
+        const size = Math.min(containerWidth, containerHeight);
         
         // Initialize Globe.gl with responsive sizing
         const globe = (window as any).Globe()(mountRef.current)
@@ -51,7 +51,7 @@ export function RotatingWorld3D() {
           .showGlobe(true)
           .showAtmosphere(true)
           .atmosphereColor('#ff6308')
-          .atmosphereAltitude(0.15)
+          .atmosphereAltitude(0.12)
           .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg');
 
         globeRef.current = globe;
@@ -190,37 +190,28 @@ export function RotatingWorld3D() {
   }, []);
 
   return (
-    <div className="relative w-full h-64 sm:h-80 lg:h-96 max-w-lg mx-auto border-2 border-orange-400 rounded-lg bg-black/40" data-testid="rotating-world">
-      {/* Title overlay */}
-      <div className="absolute -top-6 sm:-top-8 left-0 right-0 text-center">
-        <span className="text-orange-400 text-xs font-mono uppercase tracking-wider">
-          🌍 3D GLOBE VISUALIZATION
-        </span>
-      </div>
-      
+    <div className="relative w-full h-80 sm:h-96 lg:h-[400px] max-w-md sm:max-w-lg mx-auto" data-testid="rotating-world">
       {/* Globe.gl Container */}
       <div 
         ref={mountRef}
-        className="w-full h-full rounded-lg"
+        className="w-full h-full rounded-xl"
         style={{ 
-          filter: 'drop-shadow(0 0 40px rgba(255, 99, 8, 0.5))',
-          background: 'radial-gradient(circle, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.95) 100%)'
+          filter: 'drop-shadow(0 0 30px rgba(255, 99, 8, 0.3))'
         }}
       />
       
       {/* Loading indicator */}
       {!isLoaded && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4">
-          <div className="w-16 h-16 border-4 border-orange-400 border-t-transparent rounded-full animate-spin"></div>
-          <span className="text-orange-400 text-lg font-mono">Loading 3D Globe...</span>
+        <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-black/20 rounded-xl">
+          <div className="w-12 h-12 border-3 border-orange-400 border-t-transparent rounded-full animate-spin"></div>
+          <span className="text-orange-400 text-sm font-mono">Loading Globe...</span>
         </div>
       )}
       
       {/* Success indicator when loaded */}
       {isLoaded && (
-        <div className="absolute top-2 right-2 flex items-center space-x-2">
-          <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-          <span className="text-green-400 text-xs font-mono">GLOBE ACTIVE</span>
+        <div className="absolute top-3 right-3 opacity-75">
+          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
         </div>
       )}
     </div>
