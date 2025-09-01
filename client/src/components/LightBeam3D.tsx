@@ -104,17 +104,90 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
           }}
         />
         
-        {/* Extended Particle System */}
+        {/* Enhanced Multi-Layer Particle System */}
         <div className="particles absolute inset-0">
-          {Array.from({ length: 12 }, (_, i) => (
+          {/* Main particle stream - close to beam */}
+          {Array.from({ length: 24 }, (_, i) => (
             <div
-              key={i}
-              className="particle absolute w-0.5 h-0.5 bg-white/60 rounded-full"
+              key={`main-${i}`}
+              className="particle absolute bg-white/70 rounded-full"
               style={{
-                top: `${48 + (i % 5)}%`,
-                left: `${85 - (i * 7)}%`,
-                animation: `particleFloat ${8 + (i * 0.5)}s linear infinite`,
-                animationDelay: `${i * 0.8}s`
+                width: `${0.5 + (i % 3) * 0.2}px`,
+                height: `${0.5 + (i % 3) * 0.2}px`,
+                top: `${46 + (i % 7) * 1.2}%`,
+                left: `${88 - (i * 3.5)}%`,
+                animation: `particleFloat ${6 + (i * 0.3)}s linear infinite`,
+                animationDelay: `${i * 0.4}s`,
+                boxShadow: '0 0 2px rgba(255, 255, 255, 0.8)'
+              }}
+            />
+          ))}
+          
+          {/* Secondary particle layer - scattered around beam */}
+          {Array.from({ length: 18 }, (_, i) => (
+            <div
+              key={`secondary-${i}`}
+              className="particle absolute bg-white/50 rounded-full"
+              style={{
+                width: `${0.3 + (i % 4) * 0.15}px`,
+                height: `${0.3 + (i % 4) * 0.15}px`,
+                top: `${42 + (i % 12) * 1.5}%`,
+                left: `${90 - (i * 4.8)}%`,
+                animation: `particleFloat ${9 + (i * 0.4)}s linear infinite`,
+                animationDelay: `${i * 0.6}s`,
+                boxShadow: '0 0 1px rgba(255, 255, 255, 0.6)'
+              }}
+            />
+          ))}
+          
+          {/* Micro particles - very small and fast */}
+          {Array.from({ length: 32 }, (_, i) => (
+            <div
+              key={`micro-${i}`}
+              className="particle absolute bg-white/40 rounded-full"
+              style={{
+                width: '0.2px',
+                height: '0.2px',
+                top: `${44 + (i % 15) * 0.8}%`,
+                left: `${92 - (i * 2.8)}%`,
+                animation: `particleFloat ${4 + (i * 0.2)}s linear infinite`,
+                animationDelay: `${i * 0.3}s`,
+                boxShadow: '0 0 1px rgba(255, 255, 255, 0.9)'
+              }}
+            />
+          ))}
+          
+          {/* Larger ambient particles - slower moving */}
+          {Array.from({ length: 8 }, (_, i) => (
+            <div
+              key={`ambient-${i}`}
+              className="particle absolute bg-white/30 rounded-full"
+              style={{
+                width: `${1 + (i % 2) * 0.5}px`,
+                height: `${1 + (i % 2) * 0.5}px`,
+                top: `${40 + (i % 6) * 3}%`,
+                left: `${85 - (i * 10)}%`,
+                animation: `particleFloat ${12 + (i * 0.8)}s linear infinite`,
+                animationDelay: `${i * 1.2}s`,
+                boxShadow: '0 0 3px rgba(255, 255, 255, 0.5)'
+              }}
+            />
+          ))}
+          
+          {/* Diagonal particles - crossing the beam */}
+          {Array.from({ length: 15 }, (_, i) => (
+            <div
+              key={`diagonal-${i}`}
+              className="particle absolute bg-cyan-200/40 rounded-full"
+              style={{
+                width: `${0.4 + (i % 3) * 0.2}px`,
+                height: `${0.4 + (i % 3) * 0.2}px`,
+                top: `${35 + (i % 20) * 1.5}%`,
+                left: `${80 - (i * 5.2)}%`,
+                animation: `particleFloat ${7 + (i * 0.5)}s linear infinite`,
+                animationDelay: `${i * 0.5}s`,
+                transform: 'rotate(15deg)',
+                boxShadow: '0 0 2px rgba(0, 212, 255, 0.7)'
               }}
             />
           ))}
