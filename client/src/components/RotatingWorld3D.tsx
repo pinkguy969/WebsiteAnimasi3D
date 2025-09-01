@@ -1,192 +1,164 @@
 export function RotatingWorld3D() {
   return (
-    <div className="relative w-80 h-80 mx-auto perspective-1000" data-testid="rotating-world">
-      {/* 3D Globe Container */}
-      <div 
-        className="globe-3d relative w-full h-full transform-preserve-3d"
-        style={{
-          transformStyle: 'preserve-3d',
-          animation: 'globe3dRotate 30s linear infinite'
-        }}
-      >
-        {/* Main Globe Sphere */}
-        <div className="globe-sphere absolute inset-0 rounded-full border border-white/20 bg-gradient-radial-globe">
-          
-          {/* Latitude Grid Lines */}
-          <div className="latitude-lines absolute inset-0 rounded-full">
-            {Array.from({ length: 8 }, (_, i) => (
-              <div
-                key={`lat-${i}`}
-                className="absolute left-0 right-0 border-t border-white/15"
-                style={{
-                  top: `${10 + i * 10}%`,
-                  borderRadius: '50%',
-                  transform: `rotateX(${(i - 4) * 20}deg)`
-                }}
-              />
-            ))}
-          </div>
+    <div className="relative w-full h-96 max-w-lg mx-auto" data-testid="rotating-world">
+      {/* x.ai Style 3D Globe Container */}
+      <div className="relative w-full h-full perspective-1000">
+        <div 
+          className="globe-xai-style absolute inset-0 transform-preserve-3d"
+          style={{
+            transformStyle: 'preserve-3d',
+            animation: 'xaiGlobeRotate 40s linear infinite'
+          }}
+        >
+          {/* Main Globe Wireframe */}
+          <div className="absolute inset-0 rounded-full border border-white/30 bg-gradient-radial-xai shadow-2xl">
+            
+            {/* Wireframe Grid - More realistic like x.ai */}
+            <div className="absolute inset-0 rounded-full">
+              {/* Latitude lines */}
+              {Array.from({ length: 9 }, (_, i) => (
+                <div
+                  key={`lat-${i}`}
+                  className="absolute left-0 right-0"
+                  style={{
+                    top: `${5 + i * 11}%`,
+                    height: '1px',
+                    background: `linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 80%, transparent 100%)`,
+                    borderRadius: '50%',
+                    transform: `rotateX(${(i - 4) * 18}deg)`
+                  }}
+                />
+              ))}
+              
+              {/* Longitude lines */}
+              {Array.from({ length: 16 }, (_, i) => (
+                <div
+                  key={`lng-${i}`}
+                  className="absolute top-0 bottom-0 left-1/2 w-px"
+                  style={{
+                    background: `linear-gradient(0deg, transparent 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 80%, transparent 100%)`,
+                    transform: `rotateY(${i * 22.5}deg)`,
+                    transformOrigin: 'center'
+                  }}
+                />
+              ))}
+            </div>
 
-          {/* Longitude Grid Lines */}
-          <div className="longitude-lines absolute inset-0 rounded-full">
-            {Array.from({ length: 12 }, (_, i) => (
-              <div
-                key={`lng-${i}`}
-                className="absolute top-0 bottom-0 left-1/2 border-l border-white/15"
-                style={{
-                  transform: `rotateY(${i * 30}deg)`,
-                  transformOrigin: 'center'
-                }}
-              />
-            ))}
-          </div>
-
-          {/* Continent Wireframes on Globe Surface */}
-          <div className="continents absolute inset-0 rounded-full overflow-hidden">
-            {/* Asia */}
-            <div 
-              className="continent absolute"
-              style={{
-                top: '25%',
-                right: '15%',
-                width: '60px',
-                height: '40px',
-                transform: 'rotateY(45deg) rotateX(10deg)'
-              }}
-            >
-              <svg viewBox="0 0 60 40" className="w-full h-full fill-none stroke-white/60 stroke-[0.8]">
-                <path d="M10,15 Q20,10 35,12 Q45,15 55,20 Q50,30 40,33 Q25,35 15,30 Q8,25 10,15Z" />
-                <path d="M35,12 Q40,5 50,8 Q55,12 55,20" />
-              </svg>
-            </div>
-            
-            {/* Europe */}
-            <div 
-              className="continent absolute"
-              style={{
-                top: '20%',
-                left: '35%',
-                width: '40px',
-                height: '25px',
-                transform: 'rotateY(15deg) rotateX(5deg)'
-              }}
-            >
-              <svg viewBox="0 0 40 25" className="w-full h-full fill-none stroke-white/60 stroke-[0.8]">
-                <path d="M5,12 Q15,8 25,10 Q35,8 38,15 Q33,20 25,22 Q15,20 8,17 Q3,14 5,12Z" />
-              </svg>
-            </div>
-            
-            {/* Africa */}
-            <div 
-              className="continent absolute"
-              style={{
-                top: '35%',
-                left: '40%',
-                width: '30px',
-                height: '50px',
-                transform: 'rotateY(20deg) rotateX(-5deg)'
-              }}
-            >
-              <svg viewBox="0 0 30 50" className="w-full h-full fill-none stroke-white/60 stroke-[0.8]">
-                <path d="M15,5 Q25,8 28,18 Q25,30 22,40 Q18,47 15,48 Q12,47 8,40 Q5,30 8,18 Q12,8 15,5Z" />
-              </svg>
-            </div>
-            
-            {/* Americas */}
-            <div 
-              className="continent absolute"
-              style={{
-                top: '25%',
-                left: '5%',
-                width: '45px',
-                height: '60px',
-                transform: 'rotateY(-45deg) rotateX(0deg)'
-              }}
-            >
-              <svg viewBox="0 0 45 60" className="w-full h-full fill-none stroke-white/60 stroke-[0.8]">
-                <path d="M15,8 Q25,5 30,12 Q28,22 25,32 Q30,42 28,52 Q25,58 20,60 Q15,58 12,52 Q10,42 15,32 Q12,22 10,12 Q12,5 15,8Z" />
-                <path d="M30,12 Q38,10 42,18 Q40,28 35,32 Q32,28 30,22" />
-              </svg>
+            {/* Subtle continent outlines */}
+            <div className="absolute inset-0 rounded-full overflow-hidden opacity-60">
+              {/* Simplified continent wireframes */}
+              <div className="absolute top-[20%] left-[45%] w-8 h-6">
+                <div className="w-full h-full border border-white/40 rounded-sm transform rotate-12"></div>
+              </div>
+              <div className="absolute top-[35%] left-[42%] w-6 h-10">
+                <div className="w-full h-full border border-white/40 rounded-sm transform rotate-3"></div>
+              </div>
+              <div className="absolute top-[25%] right-[20%] w-10 h-8">
+                <div className="w-full h-full border border-white/40 rounded-sm transform -rotate-6"></div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Orbital Rings Around Globe */}
-        <div 
-          className="orbital-ring absolute inset-0 border border-orange-400/60 rounded-full" 
-          style={{ 
-            transform: 'rotateX(75deg) scale(1.2)',
-            animation: 'orbitRing3d1 20s linear infinite'
-          }} 
-        />
-        
-        <div 
-          className="orbital-ring absolute inset-0 border border-orange-500/40 rounded-full" 
-          style={{ 
-            transform: 'rotateX(-60deg) rotateZ(45deg) scale(1.4)',
-            animation: 'orbitRing3d2 25s linear infinite reverse'
-          }} 
-        />
-
-        {/* Location Markers on Globe */}
-        <div className="markers-3d absolute inset-0">
+        {/* x.ai Style Location Markers */}
+        <div className="absolute inset-0">
           {/* London Marker */}
           <div 
-            className="marker-3d absolute"
+            className="absolute"
             style={{
-              top: '22%',
-              left: '48%',
-              transform: 'rotateY(0deg) translateZ(80px)'
+              left: '60.8%',
+              top: '14%',
+              transform: 'translate(-0.5rem, -0.5rem)'
             }}
             data-testid="marker-london"
           >
-            <div className="marker-dot w-2 h-2 bg-orange-400 rounded-full animate-pulse">
-              <div className="absolute inset-0 bg-orange-400 rounded-full animate-ping opacity-75"></div>
+            <div className="flex flex-col">
+              <div 
+                className="w-4 h-4 order-1" 
+                style={{ background: 'rgb(255, 99, 8)' }}
+              ></div>
+              <div className="pl-6 font-mono text-sm uppercase text-white order-2">
+                <span className="text-balance">London</span> <br/>
+                <span className="opacity-75">51.5053°N, <br/>0.121°W</span>
+              </div>
             </div>
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xs text-white/80 font-mono whitespace-nowrap">
-              <div>LONDON</div>
-              <div className="text-white/60">51.5053°N,</div>
-              <div className="text-white/60">0.1212°W</div>
+          </div>
+
+          {/* San Francisco • Palo Alto Marker */}
+          <div 
+            className="absolute"
+            style={{
+              left: '18.7%',
+              top: '26.2%',
+              transform: 'translate(-0.5rem, -100%)'
+            }}
+            data-testid="marker-sf"
+          >
+            <div className="flex flex-col">
+              <div 
+                className="w-4 h-4 order-2" 
+                style={{ background: 'rgb(255, 99, 8)' }}
+              ></div>
+              <div className="pl-6 font-mono text-sm uppercase text-white order-1">
+                <span className="text-balance">San Francisco • Palo Alto</span> <br/>
+                <span className="opacity-75">37.6145°N, <br/>122.3945°W</span>
+              </div>
             </div>
           </div>
 
           {/* Jakarta Marker */}
           <div 
-            className="marker-3d absolute"
+            className="absolute"
             style={{
-              top: '45%',
-              right: '25%',
-              transform: 'rotateY(120deg) translateZ(80px)'
+              left: '45.4%',
+              top: '47%',
+              transform: 'translate(-0.5rem, -0.5rem)'
             }}
             data-testid="marker-jakarta"
           >
-            <div className="marker-dot w-2 h-2 bg-cyan-400 rounded-full animate-pulse">
-              <div className="absolute inset-0 bg-cyan-400 rounded-full animate-ping opacity-75"></div>
+            <div className="flex flex-col">
+              <div 
+                className="w-4 h-4 order-1" 
+                style={{ background: 'rgb(255, 99, 8)' }}
+              ></div>
+              <div className="pl-6 font-mono text-sm uppercase text-white order-2">
+                <span className="text-balance">Jakarta</span> <br/>
+                <span className="opacity-75">6.2088°S, <br/>106.8456°E</span>
+              </div>
             </div>
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xs text-white/80 font-mono whitespace-nowrap">
-              <div>JAKARTA</div>
-              <div className="text-white/60">6.2088°S,</div>
-              <div className="text-white/60">106.8456°E</div>
+          </div>
+
+          {/* Singapore Marker */}
+          <div 
+            className="absolute"
+            style={{
+              left: '72%',
+              top: '44%',
+              transform: 'translate(-0.5rem, -0.5rem)'
+            }}
+            data-testid="marker-singapore"
+          >
+            <div className="flex flex-col">
+              <div 
+                className="w-3 h-3 order-1" 
+                style={{ background: 'rgb(255, 99, 8)' }}
+              ></div>
+              <div className="pl-5 font-mono text-xs uppercase text-white order-2">
+                <span className="text-balance">Singapore</span> <br/>
+                <span className="opacity-75">1.3521°N, <br/>103.8198°E</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Floating Data Points */}
-        <div className="data-points-3d absolute inset-0">
-          {Array.from({ length: 6 }, (_, i) => (
-            <div
-              key={i}
-              className="data-point absolute w-1 h-1 bg-white/40 rounded-full"
-              style={{
-                top: `${30 + (i * 8)}%`,
-                left: `${25 + (i * 10)}%`,
-                transform: `rotateY(${i * 60}deg) translateZ(${70 + i * 5}px)`,
-                animation: `dataOrbit3d ${4 + (i * 0.5)}s ease-in-out infinite`,
-                animationDelay: `${i * 0.6}s`
-              }}
-            />
-          ))}
-        </div>
+        {/* Subtle orbital glow effect */}
+        <div 
+          className="absolute inset-0 rounded-full"
+          style={{
+            background: 'radial-gradient(circle, transparent 45%, rgba(255, 99, 8, 0.1) 70%, transparent 85%)',
+            animation: 'xaiGlow 8s ease-in-out infinite'
+          }}
+        ></div>
       </div>
     </div>
   );
