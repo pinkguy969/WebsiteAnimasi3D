@@ -48,15 +48,23 @@ export function HeroSection() {
           
           {/* No subtitle needed - x.ai keeps it very minimal */}
           
-          {/* Single minimal CTA */}
-          <div className="mt-16">
+          {/* CTA buttons with nofollow sponsored */}
+          <div className="mt-16 flex gap-6">
             <a 
-              href="#games"
-              className="inline-flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors text-lg font-light"
-              data-testid="button-explore"
+              href="#"
+              rel="nofollow sponsored"
+              className="bg-foreground text-background px-8 py-3 rounded-lg font-light hover:bg-muted-foreground transition-colors"
+              data-testid="button-login"
             >
-              <span>Jelajahi dunia gaming kami</span>
-              <ArrowRight size={20} className="opacity-60" />
+              LOGIN
+            </a>
+            <a 
+              href="#"
+              rel="nofollow sponsored"
+              className="border border-border text-foreground px-8 py-3 rounded-lg font-light hover:bg-muted hover:border-foreground transition-all"
+              data-testid="button-register"
+            >
+              DAFTAR
             </a>
           </div>
         </div>

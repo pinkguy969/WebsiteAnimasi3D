@@ -1,0 +1,32 @@
+TOLONG BUATKAN ARTIKEL DI LANDING PAGE NYA
+
+1. **Tujuan utama**:
+   - Memberikan informasi edukatif, transparan, dan ramah algoritma Google (terutama Spam Update).
+   - Konten harus menghindari klaim menyesatkan (misalnya “pasti menang” atau “gampang jackpot”).
+   - Fokus pada panduan, transparansi, dan bermain bertanggung jawab.
+
+2. **Struktur halaman**:
+   - Header dengan logo + navigasi (Profil, Panduan, RTP, FAQ, Responsible Gaming).
+   - Hero section: deskripsi singkat tentang brand, tujuan, dan CTA (Login/Daftar) dengan atribut rel="nofollow sponsored".
+   - Profil section: menjelaskan siapa brand ini, lisensi/otoritas, dan nilai transparansi.
+   - Panduan section: langkah-langkah untuk pemain baru (registrasi, batas deposit, aturan main, kontrol diri).
+   - RTP section: tabel contoh RTP dari beberapa provider, lengkap dengan catatan edukatif.
+   - Artikel section: artikel panjang dengan sub-bab (Apa itu RTP, Pentingnya Transparansi, Tips Bermain, Kesimpulan).
+   - FAQ section: minimal 5 pertanyaan edukatif seputar RTP, keamanan, dan tanggung jawab.
+   - Responsible Gaming section: tips aman, batas usia, link bantuan eksternal.
+   - Footer: informasi hak cipta, kebijakan privasi, syarat & ketentuan.
+
+3. **Gaya konten**:
+   - Gunakan bahasa formal-informatif dalam Bahasa Indonesia.
+   - Gunakan heading h1–h3 yang natural dan mengandung keyword dengan wajar.
+   - Tambahkan daftar (ul/ol), tabel, dan FAQ agar tidak dianggap thin content.
+   - Sertakan catatan atau disclaimer edukatif (misalnya: “RTP bukan prediksi hasil singkat”).
+   - Gunakan internal linking jika perlu.
+
+4. **SEO & Compliance**:
+   - Tambahkan meta title dan description yang natural, misalnya:
+     Title: “Talos168: Situs 168 Ramah Pemain dan Aman dari Risiko”
+     Description: “Talos168 adalah situs 168 yang ramah pemain dan aman dari risiko. Dengan sistem transparan, keamanan terjamin, dan pengalaman bermain yang adil, Talos168 memberikan kenyamanan maksimal bagi setiap pemain. Nikmati berbagai permainan seru dengan RTP terpercaya, bonus menarik, dan dukungan layanan pelanggan yang siap membantu kapan saja”
+   - Gunakan schema.org JSON-LD untuk FAQPage dan WebPage.
+   - Jangan ada keyword stuffing.
+   - Tampilkan tanggal update konten.

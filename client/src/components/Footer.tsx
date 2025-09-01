@@ -18,9 +18,9 @@ export function Footer() {
               Platform
             </h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-games">Games</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-rtp">RTP Data</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-guides">Panduan</a></li>
+              <li><a href="#profil" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-profil">Profil</a></li>
+              <li><a href="#panduan" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-panduan">Panduan</a></li>
+              <li><a href="#rtp" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-rtp">RTP Data</a></li>
             </ul>
           </div>
           
@@ -30,9 +30,9 @@ export function Footer() {
               Company
             </h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-about">Tentang</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-careers">Karir</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-news">Berita</a></li>
+              <li><a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-faq">FAQ</a></li>
+              <li><a href="#responsible-gaming" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-responsible">Responsible Gaming</a></li>
+              <li><a href="#artikel" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-artikel">Artikel</a></li>
             </ul>
           </div>
           
@@ -43,8 +43,8 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-support">Support</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-privacy">Privacy</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-terms">Terms</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-privacy">Kebijakan Privasi</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm" data-testid="link-terms">Syarat & Ketentuan</a></li>
             </ul>
           </div>
         </div>

@@ -12,11 +12,20 @@ export function Header() {
           <ul className="flex gap-12 list-none">
             <li>
               <a 
-                href="#games" 
+                href="#profil" 
                 className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
-                data-testid="nav-games"
+                data-testid="nav-profil"
               >
-                GAMES
+                PROFIL
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#panduan" 
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
+                data-testid="nav-panduan"
+              >
+                PANDUAN
               </a>
             </li>
             <li>
@@ -30,38 +39,20 @@ export function Header() {
             </li>
             <li>
               <a 
-                href="#guide" 
+                href="#faq" 
                 className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
-                data-testid="nav-guide"
+                data-testid="nav-faq"
               >
-                PANDUAN
+                FAQ
               </a>
             </li>
             <li>
               <a 
-                href="#support" 
+                href="#responsible-gaming" 
                 className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
-                data-testid="nav-support"
+                data-testid="nav-responsible"
               >
-                TENTANG
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#careers" 
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
-                data-testid="nav-careers"
-              >
-                CAREERS
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#news" 
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide"
-                data-testid="nav-news"
-              >
-                NEWS
+                RESPONSIBLE GAMING
               </a>
             </li>
           </ul>
@@ -73,7 +64,7 @@ export function Header() {
           className="bg-transparent border border-border text-foreground px-6 py-2 rounded-lg text-sm font-light tracking-wide hover:bg-muted hover:border-foreground transition-all"
           data-testid="cta-button"
         >
-          MAIN SEKARANG
+          LOGIN / DAFTAR
         </a>
       </div>
     </header>
