@@ -2,9 +2,14 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border">
       <div className="flex justify-between items-center px-8 py-6 max-w-6xl mx-auto">
-        {/* Ultra minimal logo - x.ai style */}
-        <a href="#" className="text-2xl font-light text-foreground tracking-tight" data-testid="logo-link">
-          TALOS168
+        {/* Logo image - x.ai style */}
+        <a href="#" className="flex items-center" data-testid="logo-link">
+          <img 
+            src="https://firebasestorage.googleapis.com/v0/b/talos-storage.appspot.com/o/LOGO-TALOS168.png?alt=media&token=bb85fb5d-bce3-46c1-a8a5-fc2a0ec9a393"
+            alt="Talos168 Logo"
+            className="h-8 w-auto"
+            data-testid="logo-image"
+          />
         </a>
         
         {/* Minimal navigation */}
