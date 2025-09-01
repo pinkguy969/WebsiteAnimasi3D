@@ -505,13 +505,13 @@
   }
 }
 
-/* x.ai Style Globe Animations */
-@keyframes xaiGlobeRotate {
+/* Realistic 3D Globe Animation */
+@keyframes realGlobeRotate {
   0% { 
-    transform: rotateY(0deg) rotateX(20deg) rotateZ(0deg);
+    transform: rotateX(-15deg) rotateY(0deg);
   }
   100% { 
-    transform: rotateY(360deg) rotateX(20deg) rotateZ(0deg);
+    transform: rotateX(-15deg) rotateY(360deg);
   }
 }
 
