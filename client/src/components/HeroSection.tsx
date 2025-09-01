@@ -48,23 +48,23 @@ export function HeroSection() {
           
           {/* No subtitle needed - x.ai keeps it very minimal */}
           
-          {/* CTA buttons with nofollow sponsored */}
+          {/* CTA buttons with 3D glitch effects */}
           <div className="mt-16 flex gap-6">
             <a 
               href="#"
               rel="nofollow sponsored"
-              className="bg-foreground text-background px-8 py-3 rounded-lg font-light hover:bg-muted-foreground transition-colors"
+              className="glitch-btn-primary bg-foreground text-background px-8 py-3 rounded-lg font-light transition-all duration-300"
               data-testid="button-login"
             >
-              LOGIN
+              <span className="btn-text">LOGIN</span>
             </a>
             <a 
               href="#"
               rel="nofollow sponsored"
-              className="border border-border text-foreground px-8 py-3 rounded-lg font-light hover:bg-muted hover:border-foreground transition-all"
+              className="glitch-btn-secondary border border-border text-foreground px-8 py-3 rounded-lg font-light transition-all duration-300"
               data-testid="button-register"
             >
-              DAFTAR
+              <span className="btn-text">DAFTAR</span>
             </a>
           </div>
         </div>
