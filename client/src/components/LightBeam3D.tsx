@@ -36,19 +36,19 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
             background: `linear-gradient(
               90deg,
               transparent 0%,
-              rgba(255, 255, 255, 0.05) 15%,
-              rgba(255, 255, 255, 0.3) 45%,
-              rgba(255, 255, 255, 0.6) 50%,
-              rgba(255, 255, 255, 0.3) 55%,
-              rgba(255, 255, 255, 0.05) 85%,
+              rgba(255, 255, 255, 0.08) 15%,
+              rgba(255, 255, 255, 0.5) 45%,
+              rgba(255, 255, 255, 0.8) 50%,
+              rgba(255, 255, 255, 0.5) 55%,
+              rgba(255, 255, 255, 0.08) 85%,
               transparent 100%
             )`,
             transform: 'translateY(-50%) rotateY(-12deg) rotateZ(-1deg)',
             filter: 'blur(0.3px)',
             boxShadow: `
-              0 0 30px rgba(255, 255, 255, 0.3),
-              0 0 60px rgba(255, 255, 255, 0.1),
-              0 0 120px rgba(255, 255, 255, 0.05)
+              0 0 40px rgba(255, 255, 255, 0.4),
+              0 0 80px rgba(255, 255, 255, 0.15),
+              0 0 160px rgba(255, 255, 255, 0.08)
             `,
             animation: 'lightBeamPulse 6s ease-in-out infinite alternate'
           }}
@@ -60,9 +60,9 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
               background: `linear-gradient(
                 90deg,
                 transparent 0%,
-                rgba(255, 255, 255, 0.3) 15%,
-                rgba(255, 255, 255, 0.6) 50%,
-                rgba(255, 255, 255, 0.3) 85%,
+                rgba(255, 255, 255, 0.4) 15%,
+                rgba(255, 255, 255, 0.8) 50%,
+                rgba(255, 255, 255, 0.4) 85%,
                 transparent 100%
               )`,
               filter: 'blur(2px)',
@@ -94,8 +94,8 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
           style={{
             background: `radial-gradient(
               ellipse 120% 60%,
-              rgba(255, 255, 255, 0.1) 0%,
-              rgba(0, 212, 255, 0.05) 30%,
+              rgba(255, 255, 255, 0.15) 0%,
+              rgba(0, 212, 255, 0.08) 30%,
               transparent 70%
             )`,
             transform: 'rotateZ(-2deg)',

@@ -58,10 +58,10 @@ export function Header() {
           </ul>
         </nav>
         
-        {/* Simple CTA button */}
+        {/* Glowing CTA button */}
         <a 
           href="#try" 
-          className="bg-transparent border border-border text-foreground px-6 py-2 rounded-lg text-sm font-light tracking-wide hover:bg-muted hover:border-foreground transition-all"
+          className="navbar-glow-btn bg-transparent border border-border text-foreground px-6 py-2 rounded-lg text-sm font-light tracking-wide transition-all duration-300"
           data-testid="cta-button"
         >
           LOGIN / DAFTAR

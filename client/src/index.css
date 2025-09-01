@@ -353,6 +353,44 @@
   display: inline-block;
 }
 
+/* Navbar Glow Effects */
+.navbar-glow-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-glow-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+.navbar-glow-btn:hover::before {
+  opacity: 1;
+  animation: navbar-glow 2s infinite;
+}
+
+.navbar-glow-btn:hover {
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.2),
+    0 0 40px rgba(0, 212, 255, 0.1),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes navbar-glow {
+  0% { 
+    transform: translateX(-100%);
+  }
+  100% { 
+    transform: translateX(100%);
+  }
+}
+
 /* x.ai responsive design - ultra clean */
 @media (max-width: 1024px) {
   .light-beam {
@@ -406,6 +444,32 @@
   
   .hero-content .max-w-2xl {
     max-width: none !important;
+  }
+
+  /* Mobile-optimized buttons */
+  .glitch-btn-primary,
+  .glitch-btn-secondary {
+    padding: 1rem 2rem !important;
+    font-size: 1rem !important;
+    width: auto;
+    min-width: 120px;
+    text-align: center;
+  }
+
+}
+
+/* Stack buttons vertically on very small screens */
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+  
+  .glitch-btn-primary,
+  .glitch-btn-secondary {
+    width: 100% !important;
+    max-width: 200px !important;
   }
 }
 

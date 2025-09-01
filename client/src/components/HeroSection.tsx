@@ -49,7 +49,7 @@ export function HeroSection() {
           {/* No subtitle needed - x.ai keeps it very minimal */}
           
           {/* CTA buttons with 3D glitch effects */}
-          <div className="mt-16 flex gap-6">
+          <div className="mt-16 flex gap-6 hero-buttons">
             <a 
               href="#"
               rel="nofollow sponsored"
