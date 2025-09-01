@@ -1,153 +1,167 @@
+import { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+
 export function RotatingWorld3D() {
+  const mountRef = useRef<HTMLDivElement>(null);
+  const sceneRef = useRef<THREE.Scene>();
+  const rendererRef = useRef<THREE.WebGLRenderer>();
+  const globeGroupRef = useRef<THREE.Group>();
+
+  useEffect(() => {
+    if (!mountRef.current) return;
+
+    // Scene setup
+    const scene = new THREE.Scene();
+    sceneRef.current = scene;
+
+    // Camera setup - positioned like x.ai
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      1, // aspect ratio will be updated
+      0.1,
+      1000
+    );
+    camera.position.set(0, 0, 4);
+
+    // Renderer setup
+    const renderer = new THREE.WebGLRenderer({ 
+      alpha: true,
+      antialias: true 
+    });
+    renderer.setSize(400, 400);
+    renderer.setClearColor(0x000000, 0);
+    rendererRef.current = renderer;
+    mountRef.current.appendChild(renderer.domElement);
+
+    // Globe Group for rotation
+    const globeGroup = new THREE.Group();
+    globeGroupRef.current = globeGroup;
+    scene.add(globeGroup);
+
+    // Main sphere wireframe
+    const sphereGeometry = new THREE.SphereGeometry(1.5, 32, 16);
+    const sphereMaterial = new THREE.MeshBasicMaterial({
+      color: 0x333333,
+      wireframe: false,
+      transparent: true,
+      opacity: 0.1
+    });
+    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    globeGroup.add(sphere);
+
+    // Wireframe lines for latitude
+    for (let i = 0; i < 8; i++) {
+      const lat = (i / 7 - 0.5) * Math.PI;
+      const radius = Math.cos(lat) * 1.5;
+      const y = Math.sin(lat) * 1.5;
+      
+      const geometry = new THREE.RingGeometry(radius - 0.005, radius + 0.005, 64);
+      const material = new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.3,
+        side: THREE.DoubleSide
+      });
+      const ring = new THREE.Mesh(geometry, material);
+      ring.position.y = y;
+      ring.rotation.x = Math.PI / 2;
+      globeGroup.add(ring);
+    }
+
+    // Wireframe lines for longitude
+    for (let i = 0; i < 12; i++) {
+      const angle = (i / 12) * Math.PI * 2;
+      const curve = new THREE.EllipseCurve(0, 0, 1.5, 1.5, 0, Math.PI * 2, false, 0);
+      const points = curve.getPoints(64);
+      const geometry = new THREE.BufferGeometry().setFromPoints(points);
+      
+      const material = new THREE.LineBasicMaterial({
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.3
+      });
+      
+      const line = new THREE.Line(geometry, material);
+      line.rotation.y = angle;
+      line.rotation.z = Math.PI / 2;
+      globeGroup.add(line);
+    }
+
+    // Continent outlines (simplified)
+    const continentMaterial = new THREE.MeshBasicMaterial({
+      color: 0x666666,
+      transparent: true,
+      opacity: 0.4
+    });
+
+    // Asia outline
+    const asiaGeometry = new THREE.RingGeometry(0.02, 0.04, 8);
+    const asia = new THREE.Mesh(asiaGeometry, continentMaterial);
+    asia.position.set(0.8, 0.6, 1.2);
+    asia.lookAt(new THREE.Vector3(0, 0, 0));
+    globeGroup.add(asia);
+
+    // Europe outline
+    const europeGeometry = new THREE.RingGeometry(0.015, 0.03, 8);
+    const europe = new THREE.Mesh(europeGeometry, continentMaterial);
+    europe.position.set(0.3, 0.8, 1.3);
+    europe.lookAt(new THREE.Vector3(0, 0, 0));
+    globeGroup.add(europe);
+
+    // Africa outline
+    const africaGeometry = new THREE.RingGeometry(0.018, 0.035, 8);
+    const africa = new THREE.Mesh(africaGeometry, continentMaterial);
+    africa.position.set(0.2, -0.3, 1.4);
+    africa.lookAt(new THREE.Vector3(0, 0, 0));
+    globeGroup.add(africa);
+
+    // Americas outline
+    const americasGeometry = new THREE.RingGeometry(0.025, 0.045, 8);
+    const americas = new THREE.Mesh(americasGeometry, continentMaterial);
+    americas.position.set(-1.2, 0.2, 0.8);
+    americas.lookAt(new THREE.Vector3(0, 0, 0));
+    globeGroup.add(americas);
+
+    // Animation loop
+    const animate = () => {
+      requestAnimationFrame(animate);
+      
+      if (globeGroupRef.current) {
+        globeGroupRef.current.rotation.y += 0.002; // Slow rotation like x.ai
+      }
+      
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    // Cleanup function
+    return () => {
+      if (mountRef.current && renderer.domElement) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
+      renderer.dispose();
+    };
+  }, []);
+
   return (
     <div className="relative w-full h-96 max-w-lg mx-auto" data-testid="rotating-world">
-      {/* 3D Globe with Multiple Layers for Realistic Sphere Effect */}
+      {/* Three.js Globe Container */}
       <div 
-        className="globe-container absolute inset-0"
-        style={{
-          perspective: '1200px',
-          perspectiveOrigin: '50% 50%'
+        ref={mountRef}
+        className="absolute inset-0 flex items-center justify-center"
+        style={{ 
+          filter: 'drop-shadow(0 0 20px rgba(255, 99, 8, 0.1))'
         }}
-      >
-        <div 
-          className="globe-sphere transform-preserve-3d"
-          style={{
-            transformStyle: 'preserve-3d',
-            animation: 'realGlobeRotate 35s linear infinite',
-            position: 'absolute',
-            inset: '0',
-            transform: 'rotateX(-15deg) rotateY(0deg)'
-          }}
-        >
-          {/* Main Globe Base with Realistic Shading */}
-          <div 
-            className="sphere-base absolute inset-8 rounded-full"
-            style={{
-              background: `
-                radial-gradient(ellipse at 25% 25%, 
-                  rgba(255, 255, 255, 0.15) 0%, 
-                  rgba(255, 99, 8, 0.08) 15%,
-                  rgba(100, 100, 100, 0.05) 35%,
-                  rgba(30, 30, 30, 0.6) 60%,
-                  rgba(0, 0, 0, 0.9) 85%,
-                  rgba(0, 0, 0, 1) 100%
-                )
-              `,
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              boxShadow: `
-                inset -20px -20px 50px rgba(0, 0, 0, 0.8),
-                inset 20px 20px 50px rgba(255, 255, 255, 0.1),
-                0 0 80px rgba(255, 99, 8, 0.1)
-              `
-            }}
-          >
+      />
 
-            {/* 3D Latitude Rings */}
-            {Array.from({ length: 8 }, (_, i) => {
-              const angle = (i - 3.5) * 25; // -87.5 to 87.5 degrees
-              const radius = Math.cos(angle * Math.PI / 180);
-              const yOffset = Math.sin(angle * Math.PI / 180) * 40;
-              
-              return (
-                <div
-                  key={`lat-3d-${i}`}
-                  className="absolute border border-white/20 rounded-full"
-                  style={{
-                    left: '50%',
-                    top: '50%',
-                    width: `${radius * 85}%`,
-                    height: `${radius * 85}%`,
-                    transform: `translate(-50%, calc(-50% + ${yOffset}px)) rotateX(${angle}deg)`,
-                    transformOrigin: 'center center',
-                    opacity: Math.abs(radius) * 0.8 + 0.2
-                  }}
-                />
-              );
-            })}
-
-            {/* 3D Longitude Meridians */}
-            {Array.from({ length: 16 }, (_, i) => (
-              <div
-                key={`lng-3d-${i}`}
-                className="absolute border border-white/20 rounded-full"
-                style={{
-                  left: '50%',
-                  top: '50%',
-                  width: '85%',
-                  height: '85%',
-                  transform: `translate(-50%, -50%) rotateY(${i * 22.5}deg)`,
-                  transformOrigin: 'center center',
-                  opacity: 0.6
-                }}
-              />
-            ))}
-
-            {/* Continent Shadows on Sphere */}
-            <div className="continents-shadow absolute inset-0 rounded-full overflow-hidden">
-              {/* Asia shadow */}
-              <div 
-                className="absolute bg-white/10 rounded-lg"
-                style={{
-                  top: '25%',
-                  right: '20%',
-                  width: '35px',
-                  height: '25px',
-                  transform: 'rotateY(45deg) rotateX(5deg) translateZ(1px)',
-                  filter: 'blur(1px)'
-                }}
-              />
-              
-              {/* Europe shadow */}
-              <div 
-                className="absolute bg-white/10 rounded-lg"
-                style={{
-                  top: '22%',
-                  left: '45%',
-                  width: '20px',
-                  height: '15px',
-                  transform: 'rotateY(15deg) rotateX(2deg) translateZ(1px)',
-                  filter: 'blur(1px)'
-                }}
-              />
-              
-              {/* Africa shadow */}
-              <div 
-                className="absolute bg-white/10 rounded-lg"
-                style={{
-                  top: '38%',
-                  left: '47%',
-                  width: '15px',
-                  height: '30px',
-                  transform: 'rotateY(20deg) rotateX(-3deg) translateZ(1px)',
-                  filter: 'blur(1px)'
-                }}
-              />
-              
-              {/* Americas shadow */}
-              <div 
-                className="absolute bg-white/10 rounded-lg"
-                style={{
-                  top: '28%',
-                  left: '15%',
-                  width: '25px',
-                  height: '40px',
-                  transform: 'rotateY(-35deg) rotateX(0deg) translateZ(1px)',
-                  filter: 'blur(1px)'
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Location Markers - Positioned like x.ai */}
-      <div className="markers-xai absolute inset-0 pointer-events-none">
+      {/* x.ai Style Location Markers */}
+      <div className="absolute inset-0 pointer-events-none">
         {/* San Francisco • Palo Alto */}
         <div 
           className="absolute w-40 whitespace-nowrap"
           style={{
-            left: '15%',
-            top: '22%',
+            left: '18.7%',
+            top: '26.2%',
             transform: 'translate(-0.5rem, -100%)',
             display: 'block'
           }}
@@ -169,8 +183,8 @@ export function RotatingWorld3D() {
         <div 
           className="absolute w-40 whitespace-nowrap"
           style={{
-            left: '75%',
-            top: '15%',
+            left: '60.8%',
+            top: '14%',
             transform: 'translate(-0.5rem, -0.5rem)',
             display: 'block'
           }}
@@ -192,8 +206,8 @@ export function RotatingWorld3D() {
         <div 
           className="absolute w-40 whitespace-nowrap"
           style={{
-            left: '55%',
-            top: '55%',
+            left: '45.4%',
+            top: '47%',
             transform: 'translate(-0.5rem, -0.5rem)',
             display: 'block'
           }}
@@ -215,8 +229,8 @@ export function RotatingWorld3D() {
         <div 
           className="absolute w-40 whitespace-nowrap"
           style={{
-            left: '85%',
-            top: '48%',
+            left: '72%',
+            top: '44%',
             transform: 'translate(-0.5rem, -0.5rem)',
             display: 'block'
           }}
