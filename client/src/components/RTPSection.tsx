@@ -1,5 +1,3 @@
-import { RotatingWorld3D } from "./RotatingWorld3D";
-
 export function RTPSection() {
   const rtpData = [
     { provider: "Pragmatic Play", game: "Sweet Bonanza", rtp: "96.51%", category: "Slot" },
@@ -11,10 +9,10 @@ export function RTPSection() {
   ];
 
   return (
-    <section id="rtp" className="py-16 sm:py-24 lg:py-32 bg-background border-t border-border relative z-10">
+    <section id="rtp" className="py-16 sm:py-24 lg:py-32 bg-background border-t border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-12 lg:space-y-16">
-          {/* Section header with 3D World */}
+          {/* Section header with simple placeholder */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
               <div className="font-mono text-xs text-muted-foreground uppercase tracking-[0.2em] mb-8 opacity-70">
@@ -27,12 +25,17 @@ export function RTPSection() {
               <p className="text-muted-foreground leading-relaxed text-base lg:text-lg" data-testid="text-rtp-description">
                 Data Return to Player (RTP) yang akurat dan terupdate untuk membantu Anda membuat keputusan yang tepat.
               </p>
-              
             </div>
             
-            {/* 3D Rotating World */}
+            {/* Simple globe placeholder */}
             <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
-              <RotatingWorld3D />
+              <div className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[400px] lg:h-[400px] max-w-md sm:max-w-lg mx-auto bg-gradient-to-br from-orange-500/10 to-black/80 rounded-2xl flex flex-col items-center justify-center border border-border/30" data-testid="globe-placeholder">
+                <div className="text-6xl text-orange-400 mb-4">🌍</div>
+                <div className="text-center text-orange-400/80 text-sm font-mono">
+                  3D Globe Visualization<br />
+                  <span className="text-xs opacity-70">(Interactive on full site)</span>
+                </div>
+              </div>
             </div>
           </div>
 
