@@ -1,3 +1,5 @@
+import { RotatingWorld3D } from "./RotatingWorld3D";
+
 export function RTPSection() {
   const rtpData = [
     { provider: "Pragmatic Play", game: "Sweet Bonanza", rtp: "96.51%", category: "Slot" },
@@ -12,18 +14,25 @@ export function RTPSection() {
     <section id="rtp" className="py-32 bg-background border-t border-border relative z-10">
       <div className="max-w-6xl mx-auto px-8">
         <div className="space-y-16">
-          {/* Section header */}
-          <div className="max-w-2xl">
-            <div className="font-mono text-xs text-muted-foreground uppercase tracking-[0.2em] mb-8 opacity-70">
-              [ RTP TRANSPARENCY ]
+          {/* Section header with 3D World */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="font-mono text-xs text-muted-foreground uppercase tracking-[0.2em] mb-8 opacity-70">
+                [ RTP TRANSPARENCY ]
+              </div>
+              <h2 className="text-4xl md:text-5xl font-light leading-tight text-foreground mb-8" data-testid="text-rtp-title">
+                Informasi RTP
+                <span className="text-muted-foreground block">transparan dan real-time</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg" data-testid="text-rtp-description">
+                Data Return to Player (RTP) yang akurat dan terupdate untuk membantu Anda membuat keputusan yang tepat.
+              </p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light leading-tight text-foreground mb-8" data-testid="text-rtp-title">
-              Informasi RTP
-              <span className="text-muted-foreground block">transparan dan real-time</span>
-            </h2>
-            <p className="text-muted-foreground leading-relaxed text-lg" data-testid="text-rtp-description">
-              Data Return to Player (RTP) yang akurat dan terupdate untuk membantu Anda membuat keputusan yang tepat.
-            </p>
+            
+            {/* 3D Rotating World */}
+            <div className="flex justify-center lg:justify-end">
+              <RotatingWorld3D />
+            </div>
           </div>
 
           {/* RTP Table */}
