@@ -1,20 +1,20 @@
 export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border">
-      <div className="flex justify-between items-center px-8 py-6 max-w-6xl mx-auto">
+      <div className="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 sm:py-6 max-w-6xl mx-auto">
         {/* Logo image - x.ai style */}
         <a href="#" className="flex items-center" data-testid="logo-link">
           <img 
             src="https://firebasestorage.googleapis.com/v0/b/talos-storage.appspot.com/o/LOGO-TALOS168.png?alt=media&token=bb85fb5d-bce3-46c1-a8a5-fc2a0ec9a393"
             alt="Talos168 Logo"
-            className="h-8 w-auto"
+            className="h-6 sm:h-8 w-auto"
             data-testid="logo-image"
           />
         </a>
         
         {/* Minimal navigation */}
-        <nav className="hidden md:block">
-          <ul className="flex gap-12 list-none">
+        <nav className="hidden lg:block">
+          <ul className="flex gap-8 xl:gap-12 list-none">
             <li>
               <a 
                 href="#profil" 
@@ -66,10 +66,11 @@ export function Header() {
         {/* Glowing CTA button */}
         <a 
           href="#try" 
-          className="navbar-glow-btn bg-transparent border border-border text-foreground px-6 py-2 rounded-lg text-sm font-light tracking-wide transition-all duration-300"
+          className="navbar-glow-btn bg-transparent border border-border text-foreground px-3 sm:px-6 py-2 rounded-lg text-xs sm:text-sm font-light tracking-wide transition-all duration-300"
           data-testid="cta-button"
         >
-          LOGIN / DAFTAR
+          <span className="hidden sm:inline">LOGIN / DAFTAR</span>
+          <span className="sm:hidden">LOGIN</span>
         </a>
       </div>
     </header>

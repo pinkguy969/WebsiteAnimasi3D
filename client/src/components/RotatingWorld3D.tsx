@@ -38,10 +38,15 @@ export function RotatingWorld3D() {
       try {
         console.log('Initializing Globe...');
         
-        // Initialize Globe.gl with reliable settings
+        // Get container dimensions for responsive sizing
+        const containerWidth = mountRef.current.clientWidth;
+        const containerHeight = mountRef.current.clientHeight;
+        const size = Math.min(containerWidth, containerHeight, 400);
+        
+        // Initialize Globe.gl with responsive sizing
         const globe = (window as any).Globe()(mountRef.current)
-          .width(400)
-          .height(400)
+          .width(size)
+          .height(size)
           .backgroundColor('rgba(0,0,0,0)')
           .showGlobe(true)
           .showAtmosphere(true)
@@ -185,9 +190,9 @@ export function RotatingWorld3D() {
   }, []);
 
   return (
-    <div className="relative w-full h-96 max-w-lg mx-auto border-2 border-orange-400 rounded-lg bg-black/40" data-testid="rotating-world">
+    <div className="relative w-full h-64 sm:h-80 lg:h-96 max-w-lg mx-auto border-2 border-orange-400 rounded-lg bg-black/40" data-testid="rotating-world">
       {/* Title overlay */}
-      <div className="absolute -top-8 left-0 right-0 text-center">
+      <div className="absolute -top-6 sm:-top-8 left-0 right-0 text-center">
         <span className="text-orange-400 text-xs font-mono uppercase tracking-wider">
           🌍 3D GLOBE VISUALIZATION
         </span>
