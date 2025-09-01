@@ -1,141 +1,151 @@
 export function RotatingWorld3D() {
   return (
     <div className="relative w-80 h-80 mx-auto" data-testid="rotating-world">
-      {/* Flat 2D World Map - Rotating like a disk */}
+      {/* Flat Wireframe World Map - Rotating like a photo/disk */}
       <div 
-        className="world-disk absolute inset-0 rounded-full"
+        className="world-wireframe absolute inset-0"
         style={{
-          animation: 'worldDiskRotate 20s linear infinite'
+          animation: 'flatWorldRotate 25s linear infinite'
         }}
       >
-        {/* World Map Base Circle */}
-        <div className="absolute inset-0 rounded-full border border-white/30 bg-gradient-radial from-transparent via-white/5 to-transparent">
-          
-          {/* Continent Wireframes */}
-          <svg 
-            viewBox="0 0 320 320" 
-            className="absolute inset-0 w-full h-full"
-            style={{ transform: 'scale(0.9)' }}
-          >
-            {/* Asia */}
-            <path 
-              d="M200,80 Q220,70 250,85 Q280,90 290,110 Q285,140 270,155 Q250,165 230,160 Q210,155 200,140 Q195,120 200,100 Z" 
-              fill="none" 
-              stroke="rgba(255,255,255,0.4)" 
-              strokeWidth="1"
-            />
-            
-            {/* Europe */}
-            <path 
-              d="M140,70 Q160,60 180,75 Q190,85 185,100 Q175,110 160,105 Q145,100 135,85 Q130,75 140,70 Z" 
-              fill="none" 
-              stroke="rgba(255,255,255,0.4)" 
-              strokeWidth="1"
-            />
-            
-            {/* Africa */}
-            <path 
-              d="M160,120 Q180,115 190,135 Q195,160 185,185 Q175,205 160,210 Q145,205 135,185 Q130,160 135,135 Q145,115 160,120 Z" 
-              fill="none" 
-              stroke="rgba(255,255,255,0.4)" 
-              strokeWidth="1"
-            />
-            
-            {/* Americas */}
-            <path 
-              d="M60,100 Q80,85 90,105 Q95,130 90,155 Q85,180 75,195 Q65,205 55,195 Q45,180 40,155 Q35,130 40,105 Q50,85 60,100 Z" 
-              fill="none" 
-              stroke="rgba(255,255,255,0.4)" 
-              strokeWidth="1"
-            />
-            
-            {/* Australia */}
-            <path 
-              d="M230,200 Q250,195 260,210 Q255,225 240,230 Q225,225 220,210 Q225,195 230,200 Z" 
-              fill="none" 
-              stroke="rgba(255,255,255,0.4)" 
-              strokeWidth="1"
-            />
-            
-            {/* Grid Lines - Latitude */}
-            <circle cx="160" cy="160" r="60" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-            <circle cx="160" cy="160" r="90" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-            <circle cx="160" cy="160" r="120" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-            <circle cx="160" cy="160" r="150" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-            
-            {/* Grid Lines - Longitude */}
-            <line x1="160" y1="10" x2="160" y2="310" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-            <line x1="10" y1="160" x2="310" y2="160" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-            <line x1="113" y1="47" x2="207" y2="273" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-            <line x1="207" y1="47" x2="113" y2="273" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-          </svg>
-
-          {/* Orbital Rings */}
-          <div 
-            className="absolute inset-0 border border-orange-400/60 rounded-full"
-            style={{ 
-              transform: 'scale(1.3)',
-              animation: 'orbitRing1 15s linear infinite'
-            }} 
+        {/* Main World Circle with Wireframe */}
+        <svg 
+          viewBox="0 0 320 320" 
+          className="w-full h-full"
+        >
+          {/* Outer Circle Border */}
+          <circle 
+            cx="160" 
+            cy="160" 
+            r="155" 
+            fill="none" 
+            stroke="rgba(255,255,255,0.3)" 
+            strokeWidth="1"
           />
           
-          <div 
-            className="absolute inset-0 border border-orange-500/40 rounded-full"
-            style={{ 
-              transform: 'scale(1.5)',
-              animation: 'orbitRing2 18s linear infinite reverse'
-            }} 
+          {/* Grid Lines - Concentric Circles */}
+          <circle cx="160" cy="160" r="50" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+          <circle cx="160" cy="160" r="80" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+          <circle cx="160" cy="160" r="110" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+          <circle cx="160" cy="160" r="140" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+          
+          {/* Grid Lines - Cross Lines */}
+          <line x1="160" y1="5" x2="160" y2="315" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+          <line x1="5" y1="160" x2="315" y2="160" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+          <line x1="47" y1="47" x2="273" y2="273" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+          <line x1="273" y1="47" x2="47" y2="273" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+          
+          {/* Continent Wireframes - Simplified and Realistic */}
+          {/* Asia */}
+          <path 
+            d="M195,85 Q210,75 240,80 Q265,85 280,105 Q275,130 265,145 Q245,155 225,150 Q205,145 195,130 Q190,110 195,95 Z" 
+            fill="none" 
+            stroke="rgba(255,255,255,0.6)" 
+            strokeWidth="1"
           />
+          
+          {/* Europe */}
+          <path 
+            d="M140,80 Q155,70 175,80 Q185,90 180,105 Q170,115 155,110 Q145,105 140,95 Q135,85 140,80 Z" 
+            fill="none" 
+            stroke="rgba(255,255,255,0.6)" 
+            strokeWidth="1"
+          />
+          
+          {/* Africa */}
+          <path 
+            d="M155,125 Q170,120 180,140 Q185,165 175,190 Q165,210 155,215 Q145,210 135,190 Q130,165 135,140 Q145,120 155,125 Z" 
+            fill="none" 
+            stroke="rgba(255,255,255,0.6)" 
+            strokeWidth="1"
+          />
+          
+          {/* North America */}
+          <path 
+            d="M70,90 Q85,80 100,95 Q105,115 100,135 Q95,155 85,165 Q75,170 65,165 Q55,155 50,135 Q45,115 50,95 Q60,80 70,90 Z" 
+            fill="none" 
+            stroke="rgba(255,255,255,0.6)" 
+            strokeWidth="1"
+          />
+          
+          {/* South America */}
+          <path 
+            d="M85,180 Q95,175 100,190 Q105,210 100,230 Q95,245 85,250 Q75,245 70,230 Q65,210 70,190 Q75,175 85,180 Z" 
+            fill="none" 
+            stroke="rgba(255,255,255,0.6)" 
+            strokeWidth="1"
+          />
+          
+          {/* Australia */}
+          <path 
+            d="M240,205 Q255,200 265,215 Q260,230 245,235 Q230,230 225,215 Q230,200 240,205 Z" 
+            fill="none" 
+            stroke="rgba(255,255,255,0.6)" 
+            strokeWidth="1"
+          />
+          
+          {/* Connection Lines Between Locations */}
+          <path 
+            d="M175,80 Q200,60 225,75" 
+            fill="none" 
+            stroke="rgba(255,165,0,0.7)" 
+            strokeWidth="1.5"
+            className="connection-arc"
+          />
+          
+          <path 
+            d="M225,75 Q250,100 270,140" 
+            fill="none" 
+            stroke="rgba(255,165,0,0.7)" 
+            strokeWidth="1.5"
+            className="connection-arc"
+          />
+        </svg>
 
-          {/* Location Markers */}
-          {/* London */}
-          <div className="absolute top-[22%] left-[58%] marker-point" data-testid="marker-london">
-            <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse relative">
-              <div className="absolute inset-0 bg-orange-400 rounded-full animate-ping opacity-75"></div>
-            </div>
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xs text-white/80 font-mono whitespace-nowrap">
-              <div>LONDON</div>
-              <div className="text-white/60">51.5053°N</div>
-              <div className="text-white/60">0.1212°W</div>
-            </div>
+        {/* Location Markers - Fixed position on rotating map */}
+        {/* London Marker */}
+        <div className="absolute top-[25%] left-[55%]" data-testid="marker-london">
+          <div className="w-3 h-3 bg-orange-400 rounded-full relative">
+            <div className="absolute inset-0 bg-orange-400 rounded-full animate-ping opacity-75"></div>
           </div>
-
-          {/* Jakarta */}
-          <div className="absolute top-[65%] right-[20%] marker-point" data-testid="marker-jakarta">
-            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse relative">
-              <div className="absolute inset-0 bg-cyan-400 rounded-full animate-ping opacity-75"></div>
-            </div>
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xs text-white/80 font-mono whitespace-nowrap">
-              <div>JAKARTA</div>
-              <div className="text-white/60">6.2088°S</div>
-              <div className="text-white/60">106.8456°E</div>
-            </div>
+          <div className="absolute top-5 left-1/2 transform -translate-x-1/2 text-xs text-white/90 font-mono whitespace-nowrap text-center">
+            <div className="font-semibold">LONDON</div>
+            <div className="text-white/70">51.5053°N,</div>
+            <div className="text-white/70">0.1212°W</div>
           </div>
-
-          {/* Data Connection Lines */}
-          <svg 
-            viewBox="0 0 320 320" 
-            className="absolute inset-0 w-full h-full pointer-events-none"
-          >
-            <path 
-              d="M185,70 Q200,50 240,65 Q260,80 270,110" 
-              fill="none" 
-              stroke="rgba(255,165,0,0.6)" 
-              strokeWidth="1"
-              className="connection-line"
-              style={{ animation: 'connectionPulse 3s ease-in-out infinite' }}
-            />
-            <path 
-              d="M270,110 Q280,150 260,190 Q240,220 200,230" 
-              fill="none" 
-              stroke="rgba(255,165,0,0.6)" 
-              strokeWidth="1"
-              className="connection-line"
-              style={{ animation: 'connectionPulse 3s ease-in-out infinite 1s' }}
-            />
-          </svg>
-
         </div>
+
+        {/* Jakarta Marker */}
+        <div className="absolute top-[45%] right-[15%]" data-testid="marker-jakarta">
+          <div className="w-3 h-3 bg-cyan-400 rounded-full relative">
+            <div className="absolute inset-0 bg-cyan-400 rounded-full animate-ping opacity-75"></div>
+          </div>
+          <div className="absolute top-5 left-1/2 transform -translate-x-1/2 text-xs text-white/90 font-mono whitespace-nowrap text-center">
+            <div className="font-semibold">JAKARTA</div>
+            <div className="text-white/70">6.2088°S,</div>
+            <div className="text-white/70">106.8456°E</div>
+          </div>
+        </div>
+
+        {/* Singapore Marker */}
+        <div className="absolute top-[42%] right-[18%]" data-testid="marker-singapore">
+          <div className="w-2 h-2 bg-green-400 rounded-full relative">
+            <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-75"></div>
+          </div>
+          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xs text-white/80 font-mono whitespace-nowrap text-center">
+            <div className="text-[10px]">SG</div>
+          </div>
+        </div>
+
+        {/* Outer Orbital Ring */}
+        <div 
+          className="absolute inset-0 border border-orange-400/50 rounded-full"
+          style={{ 
+            transform: 'scale(1.15)',
+            animation: 'orbitRingFlat 12s linear infinite reverse'
+          }} 
+        />
+
       </div>
     </div>
   );

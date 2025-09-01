@@ -505,20 +505,15 @@
   }
 }
 
-/* 3D World Animations */
-@keyframes worldRotate {
-  0% { transform: rotateY(0deg) rotateX(15deg); }
-  100% { transform: rotateY(360deg) rotateX(15deg); }
+/* Flat 2D World Animations */
+@keyframes flatWorldRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-@keyframes orbitRotate1 {
-  0% { transform: rotateX(20deg) rotateY(45deg) scale(1.2) rotateZ(0deg); }
-  100% { transform: rotateX(20deg) rotateY(45deg) scale(1.2) rotateZ(360deg); }
-}
-
-@keyframes orbitRotate2 {
-  0% { transform: rotateX(-30deg) rotateY(-60deg) scale(1.4) rotateZ(0deg); }
-  100% { transform: rotateX(-30deg) rotateY(-60deg) scale(1.4) rotateZ(360deg); }
+@keyframes orbitRingFlat {
+  0% { transform: scale(1.15) rotate(0deg); }
+  100% { transform: scale(1.15) rotate(360deg); }
 }
 
 @keyframes dataFloat {
