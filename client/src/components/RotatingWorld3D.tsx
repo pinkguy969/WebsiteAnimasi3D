@@ -87,40 +87,91 @@ export function RotatingWorld3D() {
       globeGroup.add(line);
     }
 
-    // Continent outlines (simplified)
+    // Continent outlines with better visibility
     const continentMaterial = new THREE.MeshBasicMaterial({
-      color: 0x666666,
+      color: 0x888888,
       transparent: true,
-      opacity: 0.4
+      opacity: 0.6,
+      side: THREE.DoubleSide
     });
 
-    // Asia outline
-    const asiaGeometry = new THREE.RingGeometry(0.02, 0.04, 8);
+    // Asia - make it more visible
+    const asiaShape = new THREE.Shape();
+    asiaShape.moveTo(-0.3, 0.2);
+    asiaShape.lineTo(0.4, 0.3);
+    asiaShape.lineTo(0.5, 0.1);
+    asiaShape.lineTo(0.3, -0.2);
+    asiaShape.lineTo(-0.1, -0.15);
+    asiaShape.lineTo(-0.3, 0.2);
+    const asiaGeometry = new THREE.ShapeGeometry(asiaShape);
     const asia = new THREE.Mesh(asiaGeometry, continentMaterial);
-    asia.position.set(0.8, 0.6, 1.2);
-    asia.lookAt(new THREE.Vector3(0, 0, 0));
+    asia.position.set(0.6, 0.4, 1.45);
+    asia.rotation.y = 0.3;
+    asia.scale.set(0.4, 0.4, 0.4);
     globeGroup.add(asia);
 
-    // Europe outline
-    const europeGeometry = new THREE.RingGeometry(0.015, 0.03, 8);
+    // Europe
+    const europeShape = new THREE.Shape();
+    europeShape.moveTo(-0.2, 0.1);
+    europeShape.lineTo(0.2, 0.15);
+    europeShape.lineTo(0.25, -0.05);
+    europeShape.lineTo(0.1, -0.1);
+    europeShape.lineTo(-0.15, -0.05);
+    europeShape.lineTo(-0.2, 0.1);
+    const europeGeometry = new THREE.ShapeGeometry(europeShape);
     const europe = new THREE.Mesh(europeGeometry, continentMaterial);
-    europe.position.set(0.3, 0.8, 1.3);
-    europe.lookAt(new THREE.Vector3(0, 0, 0));
+    europe.position.set(0.1, 0.7, 1.4);
+    europe.rotation.y = 0.1;
+    europe.scale.set(0.3, 0.3, 0.3);
     globeGroup.add(europe);
 
-    // Africa outline
-    const africaGeometry = new THREE.RingGeometry(0.018, 0.035, 8);
+    // Africa
+    const africaShape = new THREE.Shape();
+    africaShape.moveTo(-0.15, 0.3);
+    africaShape.lineTo(0.15, 0.25);
+    africaShape.lineTo(0.2, 0);
+    africaShape.lineTo(0.1, -0.4);
+    africaShape.lineTo(-0.1, -0.35);
+    africaShape.lineTo(-0.2, 0);
+    africaShape.lineTo(-0.15, 0.3);
+    const africaGeometry = new THREE.ShapeGeometry(africaShape);
     const africa = new THREE.Mesh(africaGeometry, continentMaterial);
-    africa.position.set(0.2, -0.3, 1.4);
-    africa.lookAt(new THREE.Vector3(0, 0, 0));
+    africa.position.set(0.05, 0, 1.48);
+    africa.rotation.y = 0.05;
+    africa.scale.set(0.35, 0.35, 0.35);
     globeGroup.add(africa);
 
-    // Americas outline
-    const americasGeometry = new THREE.RingGeometry(0.025, 0.045, 8);
+    // Americas
+    const americasShape = new THREE.Shape();
+    americasShape.moveTo(-0.1, 0.4);
+    americasShape.lineTo(0.1, 0.35);
+    americasShape.lineTo(0.15, 0.1);
+    americasShape.lineTo(0.05, -0.1);
+    americasShape.lineTo(-0.05, -0.3);
+    americasShape.lineTo(-0.15, -0.2);
+    americasShape.lineTo(-0.2, 0.1);
+    americasShape.lineTo(-0.1, 0.4);
+    const americasGeometry = new THREE.ShapeGeometry(americasShape);
     const americas = new THREE.Mesh(americasGeometry, continentMaterial);
-    americas.position.set(-1.2, 0.2, 0.8);
-    americas.lookAt(new THREE.Vector3(0, 0, 0));
+    americas.position.set(-1.1, 0.1, 0.9);
+    americas.rotation.y = -0.3;
+    americas.scale.set(0.4, 0.4, 0.4);
     globeGroup.add(americas);
+
+    // Australia
+    const australiaShape = new THREE.Shape();
+    australiaShape.moveTo(-0.2, 0.05);
+    australiaShape.lineTo(0.2, 0.1);
+    australiaShape.lineTo(0.25, -0.05);
+    australiaShape.lineTo(0.1, -0.1);
+    australiaShape.lineTo(-0.15, -0.08);
+    australiaShape.lineTo(-0.2, 0.05);
+    const australiaGeometry = new THREE.ShapeGeometry(australiaShape);
+    const australia = new THREE.Mesh(australiaGeometry, continentMaterial);
+    australia.position.set(0.9, -0.6, 1.0);
+    australia.rotation.y = 0.4;
+    australia.scale.set(0.25, 0.25, 0.25);
+    globeGroup.add(australia);
 
     // Thailand marker on globe
     const thailandGeometry = new THREE.RingGeometry(0.015, 0.025, 6);
