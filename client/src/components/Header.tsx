@@ -70,7 +70,7 @@ export function Header() {
           className="navbar-glow-btn bg-transparent border border-border text-foreground px-3 sm:px-6 py-2 rounded-lg text-xs sm:text-sm font-bold tracking-wide transition-all duration-300"
           data-testid="cta-button"
         >
-          <span className="hidden sm:inline">LOGIN / DAFTAR</span>
+          <span className="hidden sm:inline">LOGIN / MAIN SEKARANG</span>
           <span className="sm:hidden">LOGIN</span>
         </a>
       </div>

@@ -64,7 +64,7 @@ export function HeroSection() {
               className="glitch-btn-secondary border border-border text-foreground px-6 sm:px-8 py-3 rounded-lg font-light transition-all duration-300 text-center"
               data-testid="button-register"
             >
-              <span className="btn-text">DAFTAR</span>
+              <span className="btn-text">MAIN SEKARANG</span>
             </a>
           </div>
         </div>
