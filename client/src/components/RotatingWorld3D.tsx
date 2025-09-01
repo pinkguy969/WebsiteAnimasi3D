@@ -214,16 +214,16 @@ export function RotatingWorld3D() {
 
       {/* x.ai Style Location Markers */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* San Francisco • Palo Alto */}
+        {/* Thailand */}
         <div 
           className="absolute w-40 whitespace-nowrap"
           style={{
-            left: '18.7%',
-            top: '26.2%',
+            left: '58%',
+            top: '35%',
             transform: 'translate(-0.5rem, -100%)',
             display: 'block'
           }}
-          data-testid="marker-sf"
+          data-testid="marker-thailand"
         >
           <div className="flex flex-col">
             <div 
@@ -231,31 +231,8 @@ export function RotatingWorld3D() {
               style={{ background: 'rgb(255, 99, 8)' }}
             ></div>
             <div className="pl-6 font-mono text-sm uppercase text-white order-1">
-              <span className="text-balance">San Francisco • Palo Alto</span> <br/>
-              <span className="opacity-75">37.6145°N, <br/>122.3945°W</span>
-            </div>
-          </div>
-        </div>
-
-        {/* London */}
-        <div 
-          className="absolute w-40 whitespace-nowrap"
-          style={{
-            left: '60.8%',
-            top: '14%',
-            transform: 'translate(-0.5rem, -0.5rem)',
-            display: 'block'
-          }}
-          data-testid="marker-london"
-        >
-          <div className="flex flex-col">
-            <div 
-              className="w-4 h-4 order-1" 
-              style={{ background: 'rgb(255, 99, 8)' }}
-            ></div>
-            <div className="pl-6 font-mono text-sm uppercase text-white order-2">
-              <span className="text-balance">London</span> <br/>
-              <span className="opacity-75">51.5053°N, <br/>0.121°W</span>
+              <span className="text-balance">Thailand</span> <br/>
+              <span className="opacity-75">13.7563°N, <br/>100.5018°E</span>
             </div>
           </div>
         </div>
@@ -264,8 +241,8 @@ export function RotatingWorld3D() {
         <div 
           className="absolute w-40 whitespace-nowrap"
           style={{
-            left: '45.4%',
-            top: '47%',
+            left: '55%',
+            top: '52%',
             transform: 'translate(-0.5rem, -0.5rem)',
             display: 'block'
           }}
@@ -279,29 +256,6 @@ export function RotatingWorld3D() {
             <div className="pl-6 font-mono text-sm uppercase text-white order-2">
               <span className="text-balance">Jakarta</span> <br/>
               <span className="opacity-75">6.2088°S, <br/>106.8456°E</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Singapore */}
-        <div 
-          className="absolute w-40 whitespace-nowrap"
-          style={{
-            left: '72%',
-            top: '44%',
-            transform: 'translate(-0.5rem, -0.5rem)',
-            display: 'block'
-          }}
-          data-testid="marker-singapore"
-        >
-          <div className="flex flex-col">
-            <div 
-              className="w-4 h-4 order-1" 
-              style={{ background: 'rgb(255, 99, 8)' }}
-            ></div>
-            <div className="pl-6 font-mono text-sm uppercase text-white order-2">
-              <span className="text-balance">Singapore</span> <br/>
-              <span className="opacity-75">1.3521°N, <br/>103.8198°E</span>
             </div>
           </div>
         </div>
