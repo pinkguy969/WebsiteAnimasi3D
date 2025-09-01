@@ -27,11 +27,23 @@ export function RTPSection() {
               <p className="text-muted-foreground leading-relaxed text-lg" data-testid="text-rtp-description">
                 Data Return to Player (RTP) yang akurat dan terupdate untuk membantu Anda membuat keputusan yang tepat.
               </p>
+              
+              {/* Globe status indicator */}
+              <div className="mt-4 p-3 bg-orange-400/10 border border-orange-400/20 rounded-lg">
+                <p className="text-orange-400 text-sm font-mono">
+                  🌍 Globe 3D interaktif tersedia di sebelah kanan →
+                </p>
+              </div>
             </div>
             
-            {/* 3D Rotating World */}
+            {/* 3D Rotating World - More prominent */}
             <div className="flex justify-center lg:justify-end">
-              <RotatingWorld3D />
+              <div className="p-4 bg-gradient-to-r from-orange-400/5 to-orange-600/5 rounded-xl border border-orange-400/30">
+                <RotatingWorld3D />
+                <p className="text-center text-orange-400 text-xs font-mono mt-2">
+                  Interactive 3D Earth Visualization
+                </p>
+              </div>
             </div>
           </div>
 
