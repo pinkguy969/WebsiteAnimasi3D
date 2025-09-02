@@ -151,7 +151,7 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
         
         {/* Enhanced Multi-Layer Particle System */}
         <div className="particles absolute inset-0">
-          {/* Main particle stream - following Saturn ring curve */}
+          {/* Main particle stream - synchronized with Saturn ring */}
           {Array.from({ length: 24 }, (_, i) => (
             <div
               key={`main-${i}`}
@@ -159,9 +159,9 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
               style={{
                 width: `${0.5 + (i % 3) * 0.2}px`,
                 height: `${0.5 + (i % 3) * 0.2}px`,
-                top: `${48 + (i % 7) * 0.8}%`,
-                left: `${88 - (i * 3.5)}%`,
-                animation: `particleFloat ${6 + (i * 0.3)}s linear infinite`,
+                top: '50%',
+                left: `${90 - (i * 3.8)}%`,
+                animation: `particleSaturnRing ${6 + (i * 0.3)}s linear infinite`,
                 animationDelay: `${i * 0.4}s`,
                 boxShadow: '0 0 3px rgba(255, 255, 255, 0.9)',
                 transformOrigin: 'center center'
@@ -169,7 +169,7 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
             />
           ))}
           
-          {/* Secondary particle layer - curved trajectory */}
+          {/* Secondary particle layer - outer ring trajectory */}
           {Array.from({ length: 18 }, (_, i) => (
             <div
               key={`secondary-${i}`}
@@ -177,9 +177,9 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
               style={{
                 width: `${0.3 + (i % 4) * 0.15}px`,
                 height: `${0.3 + (i % 4) * 0.15}px`,
-                top: `${44 + (i % 12) * 1.2}%`,
-                left: `${90 - (i * 4.8)}%`,
-                animation: `particleFloatCurved ${9 + (i * 0.4)}s linear infinite`,
+                top: `${47 + (i % 3) * 2}%`,
+                left: `${92 - (i * 4.8)}%`,
+                animation: `particleSaturnRingOuter ${9 + (i * 0.4)}s linear infinite`,
                 animationDelay: `${i * 0.6}s`,
                 boxShadow: '0 0 2px rgba(255, 255, 255, 0.7)',
                 transformOrigin: 'center center'
@@ -187,7 +187,7 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
             />
           ))}
           
-          {/* Micro particles - following micro curved path */}
+          {/* Micro particles - tight ring synchronization */}
           {Array.from({ length: 32 }, (_, i) => (
             <div
               key={`micro-${i}`}
@@ -195,9 +195,9 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
               style={{
                 width: '0.3px',
                 height: '0.3px',
-                top: `${46 + (i % 15) * 0.6}%`,
-                left: `${92 - (i * 2.8)}%`,
-                animation: `particleFloatMicro ${4 + (i * 0.2)}s linear infinite`,
+                top: `${49 + (i % 2) * 1}%`,
+                left: `${94 - (i * 2.8)}%`,
+                animation: `particleSaturnRing ${4 + (i * 0.2)}s linear infinite`,
                 animationDelay: `${i * 0.25}s`,
                 boxShadow: '0 0 1.5px rgba(255, 255, 255, 0.95)',
                 transformOrigin: 'center center'
@@ -205,7 +205,7 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
             />
           ))}
           
-          {/* Larger ambient particles - slow curved movement */}
+          {/* Larger ambient particles - slow ring movement */}
           {Array.from({ length: 8 }, (_, i) => (
             <div
               key={`ambient-${i}`}
@@ -213,9 +213,9 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
               style={{
                 width: `${1 + (i % 2) * 0.5}px`,
                 height: `${1 + (i % 2) * 0.5}px`,
-                top: `${42 + (i % 6) * 2.5}%`,
+                top: `${45 + (i % 3) * 4}%`,
                 left: `${85 - (i * 10)}%`,
-                animation: `particleFloatCurved ${12 + (i * 0.8)}s linear infinite`,
+                animation: `particleSaturnRingSlow ${12 + (i * 0.8)}s linear infinite`,
                 animationDelay: `${i * 1.2}s`,
                 boxShadow: '0 0 4px rgba(255, 255, 255, 0.6)',
                 transformOrigin: 'center center'
@@ -223,7 +223,7 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
             />
           ))}
           
-          {/* Saturn ring accent particles - curved cyan trail */}
+          {/* Saturn ring accent particles - synchronized cyan trail */}
           {Array.from({ length: 15 }, (_, i) => (
             <div
               key={`diagonal-${i}`}
@@ -231,9 +231,9 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
               style={{
                 width: `${0.4 + (i % 3) * 0.2}px`,
                 height: `${0.4 + (i % 3) * 0.2}px`,
-                top: `${38 + (i % 20) * 1.2}%`,
+                top: `${52 + (i % 2) * 2}%`,
                 left: `${82 - (i * 5.2)}%`,
-                animation: `particleFloatCurved ${7 + (i * 0.5)}s linear infinite`,
+                animation: `particleSaturnRingCyan ${7 + (i * 0.5)}s linear infinite`,
                 animationDelay: `${i * 0.5}s`,
                 boxShadow: '0 0 3px rgba(0, 212, 255, 0.8)',
                 transformOrigin: 'center center'
