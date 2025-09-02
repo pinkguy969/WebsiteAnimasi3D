@@ -90,11 +90,15 @@
 @keyframes lightBeamPulse {
   0% {
     opacity: 0.4;
-    transform: translateY(-50%) rotateY(-12deg) rotateZ(-1deg) scaleX(1);
+    transform: translateY(-50%) rotateY(-12deg) rotateZ(-5deg) rotateX(65deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-50%) rotateY(-10deg) rotateZ(-3deg) rotateX(67deg) scaleX(1.03) scaleY(1.1);
   }
   100% {
-    opacity: 0.8;
-    transform: translateY(-50%) rotateY(-12deg) rotateZ(-1deg) scaleX(1.02);
+    opacity: 0.6;
+    transform: translateY(-50%) rotateY(-14deg) rotateZ(-7deg) rotateX(63deg) scaleX(1.01) scaleY(0.95);
   }
 }
 

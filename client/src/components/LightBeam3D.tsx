@@ -28,79 +28,124 @@ export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
     <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Light Beam Container with 3D perspective */}
       <div className="light-beam-container absolute inset-0" style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}>
-        {/* Ultra Minimal Light Beam - x.ai style */}
+        {/* Saturn Ring Style Curved Light Beam */}
         <div 
           ref={lightBeamRef}
-          className="light-beam absolute top-1/2 -right-1/4 w-[300%] h-1 transform -translate-y-1/2"
+          className="light-beam absolute top-1/2 -right-1/4 w-[300%] h-6 transform -translate-y-1/2"
           style={{
-            background: `linear-gradient(
-              90deg,
-              transparent 0%,
-              rgba(255, 255, 255, 0.08) 15%,
-              rgba(255, 255, 255, 0.5) 45%,
-              rgba(255, 255, 255, 0.8) 50%,
-              rgba(255, 255, 255, 0.5) 55%,
-              rgba(255, 255, 255, 0.08) 85%,
-              transparent 100%
+            background: `conic-gradient(
+              from 180deg,
+              transparent 0deg,
+              rgba(255, 255, 255, 0.1) 30deg,
+              rgba(255, 255, 255, 0.6) 90deg,
+              rgba(255, 255, 255, 0.9) 180deg,
+              rgba(255, 255, 255, 0.6) 270deg,
+              rgba(255, 255, 255, 0.1) 330deg,
+              transparent 360deg
             )`,
-            transform: 'translateY(-50%) rotateY(-12deg) rotateZ(-1deg)',
-            filter: 'blur(0.3px)',
+            borderRadius: '50%',
+            clipPath: 'ellipse(150% 15% at 50% 50%)',
+            transform: 'translateY(-50%) rotateY(-12deg) rotateZ(-5deg) rotateX(65deg)',
+            filter: 'blur(0.5px)',
             boxShadow: `
-              0 0 40px rgba(255, 255, 255, 0.4),
-              0 0 80px rgba(255, 255, 255, 0.15),
-              0 0 160px rgba(255, 255, 255, 0.08)
+              0 0 60px rgba(255, 255, 255, 0.5),
+              0 0 120px rgba(255, 255, 255, 0.2),
+              0 0 200px rgba(255, 255, 255, 0.1),
+              inset 0 0 30px rgba(255, 255, 255, 0.3)
             `,
-            animation: 'lightBeamPulse 6s ease-in-out infinite alternate'
+            animation: 'lightBeamPulse 8s ease-in-out infinite alternate'
           }}
         >
-          {/* Inner Glow Layer */}
+          {/* Inner Curved Ring Glow */}
           <div 
-            className="absolute -top-1 -bottom-1 left-0 right-0"
+            className="absolute -inset-2"
             style={{
-              background: `linear-gradient(
-                90deg,
-                transparent 0%,
-                rgba(255, 255, 255, 0.4) 15%,
-                rgba(255, 255, 255, 0.8) 50%,
-                rgba(255, 255, 255, 0.4) 85%,
-                transparent 100%
+              background: `conic-gradient(
+                from 180deg,
+                transparent 0deg,
+                rgba(255, 255, 255, 0.4) 60deg,
+                rgba(255, 255, 255, 0.8) 180deg,
+                rgba(255, 255, 255, 0.4) 300deg,
+                transparent 360deg
               )`,
-              filter: 'blur(2px)',
-              animation: 'lightBeamGlow 3s ease-in-out infinite alternate'
+              borderRadius: '50%',
+              clipPath: 'ellipse(150% 20% at 50% 50%)',
+              filter: 'blur(3px)',
+              animation: 'lightBeamGlow 4s ease-in-out infinite alternate'
             }}
           />
           
-          {/* Outer Glow Layer */}
+          {/* Outer Curved Ring Glow */}
           <div 
-            className="absolute -top-2 -bottom-2 left-0 right-0"
+            className="absolute -inset-4"
             style={{
-              background: `linear-gradient(
-                90deg,
-                transparent 0%,
-                rgba(0, 212, 255, 0.2) 20%,
-                rgba(255, 255, 255, 0.4) 50%,
-                rgba(0, 212, 255, 0.2) 80%,
-                transparent 100%
+              background: `conic-gradient(
+                from 180deg,
+                transparent 0deg,
+                rgba(0, 212, 255, 0.3) 45deg,
+                rgba(255, 255, 255, 0.5) 180deg,
+                rgba(0, 212, 255, 0.3) 315deg,
+                transparent 360deg
               )`,
-              filter: 'blur(4px)',
-              animation: 'lightBeamOuterGlow 5s ease-in-out infinite alternate'
+              borderRadius: '50%',
+              clipPath: 'ellipse(150% 25% at 50% 50%)',
+              filter: 'blur(6px)',
+              animation: 'lightBeamOuterGlow 6s ease-in-out infinite alternate'
+            }}
+          />
+          
+          {/* Additional Saturn Ring Layers */}
+          <div 
+            className="absolute -inset-1"
+            style={{
+              background: `conic-gradient(
+                from 90deg,
+                transparent 0deg,
+                rgba(255, 255, 255, 0.2) 90deg,
+                rgba(255, 255, 255, 0.6) 180deg,
+                rgba(255, 255, 255, 0.2) 270deg,
+                transparent 360deg
+              )`,
+              borderRadius: '50%',
+              clipPath: 'ellipse(140% 12% at 50% 50%)',
+              filter: 'blur(1px)',
+              animation: 'lightBeamGlow 5s ease-in-out infinite alternate reverse'
             }}
           />
         </div>
         
-        {/* Ambient Glow Effect */}
+        {/* Saturn Ring Ambient Glow */}
         <div 
-          className="ambient-glow absolute top-[30%] -right-[10%] w-[80%] h-[40%]"
+          className="ambient-glow absolute top-[25%] -right-[15%] w-[100%] h-[50%]"
           style={{
             background: `radial-gradient(
-              ellipse 120% 60%,
-              rgba(255, 255, 255, 0.15) 0%,
-              rgba(0, 212, 255, 0.08) 30%,
-              transparent 70%
+              ellipse 140% 30%,
+              rgba(255, 255, 255, 0.2) 0%,
+              rgba(0, 212, 255, 0.12) 40%,
+              rgba(255, 255, 255, 0.05) 70%,
+              transparent 90%
             )`,
-            transform: 'rotateZ(-2deg)',
-            filter: 'blur(20px)',
-            animation: 'ambientPulse 6s ease-in-out infinite alternate'
+            borderRadius: '50%',
+            transform: 'rotateZ(-5deg) rotateX(60deg)',
+            filter: 'blur(25px)',
+            animation: 'ambientPulse 8s ease-in-out infinite alternate'
+          }}
+        />
+        
+        {/* Secondary Ring Glow */}
+        <div 
+          className="ambient-glow absolute top-[35%] -right-[20%] w-[90%] h-[30%]"
+          style={{
+            background: `radial-gradient(
+              ellipse 120% 20%,
+              rgba(255, 255, 255, 0.1) 0%,
+              rgba(0, 212, 255, 0.08) 50%,
+              transparent 80%
+            )`,
+            borderRadius: '50%',
+            transform: 'rotateZ(-3deg) rotateX(70deg)',
+            filter: 'blur(15px)',
+            animation: 'ambientPulse 10s ease-in-out infinite alternate reverse'
           }}
         />
         
