@@ -6,191 +6,221 @@ interface LightBeam3DProps {
 
 export function LightBeam3D({ mousePosition }: LightBeam3DProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const lightBeamRef = useRef<HTMLDivElement>(null);
+  const ringsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (lightBeamRef.current) {
+    if (ringsRef.current) {
       const centerX = 0.5;
       const centerY = 0.5;
       
-      const deltaX = (mousePosition.x - centerX) * 10;
-      const deltaY = (mousePosition.y - centerY) * 4;
+      const deltaX = (mousePosition.x - centerX) * 8;
+      const deltaY = (mousePosition.y - centerY) * 6;
       
-      const rotateY = -15 + deltaX;
-      const rotateZ = -2 + deltaY;
+      const rotateX = 15 + deltaY;
+      const rotateY = deltaX;
       
-      lightBeamRef.current.style.transform = 
-        `translateY(-50%) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
+      ringsRef.current.style.transform = 
+        `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     }
   }, [mousePosition]);
 
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Light Beam Container with 3D perspective */}
-      <div className="light-beam-container absolute inset-0" style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}>
-        {/* Ultra Minimal Light Beam - x.ai style */}
+      {/* Saturn Rings Container with 3D perspective */}
+      <div className="saturn-rings-container absolute inset-0" style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}>
+        {/* Saturn Rings System */}
         <div 
-          ref={lightBeamRef}
-          className="light-beam absolute top-1/2 -right-1/4 w-[300%] h-1 transform -translate-y-1/2"
+          ref={ringsRef}
+          className="saturn-rings absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           style={{
-            background: `linear-gradient(
-              90deg,
-              transparent 0%,
-              rgba(255, 255, 255, 0.08) 15%,
-              rgba(255, 255, 255, 0.5) 45%,
-              rgba(255, 255, 255, 0.8) 50%,
-              rgba(255, 255, 255, 0.5) 55%,
-              rgba(255, 255, 255, 0.08) 85%,
-              transparent 100%
-            )`,
-            transform: 'translateY(-50%) rotateY(-12deg) rotateZ(-1deg)',
-            filter: 'blur(0.3px)',
-            boxShadow: `
-              0 0 40px rgba(255, 255, 255, 0.4),
-              0 0 80px rgba(255, 255, 255, 0.15),
-              0 0 160px rgba(255, 255, 255, 0.08)
-            `,
-            animation: 'lightBeamPulse 6s ease-in-out infinite alternate'
+            width: '600px',
+            height: '600px',
+            transform: 'rotateX(15deg) rotateY(0deg)',
+            transformStyle: 'preserve-3d',
+            animation: 'saturnRotation 25s linear infinite'
           }}
         >
-          {/* Inner Glow Layer */}
+          {/* Main Ring - Largest */}
           <div 
-            className="absolute -top-1 -bottom-1 left-0 right-0"
+            className="saturn-ring absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             style={{
-              background: `linear-gradient(
-                90deg,
-                transparent 0%,
-                rgba(255, 255, 255, 0.4) 15%,
-                rgba(255, 255, 255, 0.8) 50%,
-                rgba(255, 255, 255, 0.4) 85%,
-                transparent 100%
-              )`,
-              filter: 'blur(2px)',
-              animation: 'lightBeamGlow 3s ease-in-out infinite alternate'
+              width: '500px',
+              height: '500px',
+              border: '2px solid rgba(255, 255, 255, 0.3)',
+              borderRadius: '50%',
+              boxShadow: `
+                0 0 20px rgba(255, 255, 255, 0.2),
+                inset 0 0 30px rgba(255, 255, 255, 0.1)
+              `,
+              animation: 'ringGlow 8s ease-in-out infinite alternate'
             }}
           />
           
-          {/* Outer Glow Layer */}
+          {/* Inner Ring */}
           <div 
-            className="absolute -top-2 -bottom-2 left-0 right-0"
+            className="saturn-ring absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             style={{
-              background: `linear-gradient(
-                90deg,
-                transparent 0%,
-                rgba(0, 212, 255, 0.2) 20%,
-                rgba(255, 255, 255, 0.4) 50%,
-                rgba(0, 212, 255, 0.2) 80%,
-                transparent 100%
-              )`,
-              filter: 'blur(4px)',
-              animation: 'lightBeamOuterGlow 5s ease-in-out infinite alternate'
+              width: '380px',
+              height: '380px',
+              border: '1.5px solid rgba(255, 255, 255, 0.4)',
+              borderRadius: '50%',
+              boxShadow: `
+                0 0 15px rgba(255, 255, 255, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.15)
+              `,
+              animation: 'ringGlow 6s ease-in-out infinite alternate',
+              animationDelay: '1s'
+            }}
+          />
+          
+          {/* Outer Ring */}
+          <div 
+            className="saturn-ring absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            style={{
+              width: '620px',
+              height: '620px',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '50%',
+              boxShadow: `
+                0 0 25px rgba(255, 255, 255, 0.15),
+                inset 0 0 40px rgba(255, 255, 255, 0.08)
+              `,
+              animation: 'ringGlow 10s ease-in-out infinite alternate',
+              animationDelay: '2s'
+            }}
+          />
+          
+          {/* Ultra Thin Ring */}
+          <div 
+            className="saturn-ring absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            style={{
+              width: '300px',
+              height: '300px',
+              border: '1px solid rgba(0, 212, 255, 0.5)',
+              borderRadius: '50%',
+              boxShadow: `
+                0 0 10px rgba(0, 212, 255, 0.4),
+                inset 0 0 15px rgba(0, 212, 255, 0.2)
+              `,
+              animation: 'ringGlow 4s ease-in-out infinite alternate',
+              animationDelay: '0.5s'
             }}
           />
         </div>
         
-        {/* Ambient Glow Effect */}
+        {/* Central Planet/Core */}
         <div 
-          className="ambient-glow absolute top-[30%] -right-[10%] w-[80%] h-[40%]"
+          className="saturn-core absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           style={{
-            background: `radial-gradient(
-              ellipse 120% 60%,
-              rgba(255, 255, 255, 0.15) 0%,
-              rgba(0, 212, 255, 0.08) 30%,
-              transparent 70%
-            )`,
-            transform: 'rotateZ(-2deg)',
-            filter: 'blur(20px)',
-            animation: 'ambientPulse 6s ease-in-out infinite alternate'
+            width: '12px',
+            height: '12px',
+            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 100%)',
+            borderRadius: '50%',
+            boxShadow: `
+              0 0 20px rgba(255, 255, 255, 0.8),
+              0 0 40px rgba(255, 255, 255, 0.4)
+            `,
+            animation: 'corePulse 3s ease-in-out infinite alternate'
           }}
         />
         
-        {/* Enhanced Multi-Layer Particle System */}
+        {/* Orbital Particles - following ring paths */}
         <div className="particles absolute inset-0">
-          {/* Main particle stream - close to beam */}
-          {Array.from({ length: 24 }, (_, i) => (
-            <div
-              key={`main-${i}`}
-              className="particle absolute bg-white/70 rounded-full"
-              style={{
-                width: `${0.5 + (i % 3) * 0.2}px`,
-                height: `${0.5 + (i % 3) * 0.2}px`,
-                top: `${46 + (i % 7) * 1.2}%`,
-                left: `${88 - (i * 3.5)}%`,
-                animation: `particleFloat ${6 + (i * 0.3)}s linear infinite`,
-                animationDelay: `${i * 0.4}s`,
-                boxShadow: '0 0 2px rgba(255, 255, 255, 0.8)'
-              }}
-            />
-          ))}
+          {/* Main ring particles */}
+          {Array.from({ length: 36 }, (_, i) => {
+            const angle = (i * 10) % 360;
+            const radius = 250;
+            const x = 50 + (radius * Math.cos(angle * Math.PI / 180)) / 12;
+            const y = 50 + (radius * Math.sin(angle * Math.PI / 180) * 0.3) / 12;
+            
+            return (
+              <div
+                key={`ring-main-${i}`}
+                className="particle absolute bg-white/60 rounded-full"
+                style={{
+                  width: `${0.8 + (i % 3) * 0.3}px`,
+                  height: `${0.8 + (i % 3) * 0.3}px`,
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  animation: `ringParticle ${20 + (i * 0.5)}s linear infinite`,
+                  animationDelay: `${i * 0.3}s`,
+                  boxShadow: '0 0 3px rgba(255, 255, 255, 0.8)'
+                }}
+              />
+            );
+          })}
           
-          {/* Secondary particle layer - scattered around beam */}
-          {Array.from({ length: 18 }, (_, i) => (
-            <div
-              key={`secondary-${i}`}
-              className="particle absolute bg-white/50 rounded-full"
-              style={{
-                width: `${0.3 + (i % 4) * 0.15}px`,
-                height: `${0.3 + (i % 4) * 0.15}px`,
-                top: `${42 + (i % 12) * 1.5}%`,
-                left: `${90 - (i * 4.8)}%`,
-                animation: `particleFloat ${9 + (i * 0.4)}s linear infinite`,
-                animationDelay: `${i * 0.6}s`,
-                boxShadow: '0 0 1px rgba(255, 255, 255, 0.6)'
-              }}
-            />
-          ))}
+          {/* Inner ring particles */}
+          {Array.from({ length: 24 }, (_, i) => {
+            const angle = (i * 15) % 360;
+            const radius = 190;
+            const x = 50 + (radius * Math.cos(angle * Math.PI / 180)) / 12;
+            const y = 50 + (radius * Math.sin(angle * Math.PI / 180) * 0.3) / 12;
+            
+            return (
+              <div
+                key={`ring-inner-${i}`}
+                className="particle absolute bg-white/50 rounded-full"
+                style={{
+                  width: `${0.6 + (i % 2) * 0.2}px`,
+                  height: `${0.6 + (i % 2) * 0.2}px`,
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  animation: `ringParticle ${15 + (i * 0.4)}s linear infinite`,
+                  animationDelay: `${i * 0.4}s`,
+                  boxShadow: '0 0 2px rgba(255, 255, 255, 0.6)'
+                }}
+              />
+            );
+          })}
           
-          {/* Micro particles - very small and fast */}
-          {Array.from({ length: 32 }, (_, i) => (
-            <div
-              key={`micro-${i}`}
-              className="particle absolute bg-white/40 rounded-full"
-              style={{
-                width: '0.2px',
-                height: '0.2px',
-                top: `${44 + (i % 15) * 0.8}%`,
-                left: `${92 - (i * 2.8)}%`,
-                animation: `particleFloat ${4 + (i * 0.2)}s linear infinite`,
-                animationDelay: `${i * 0.3}s`,
-                boxShadow: '0 0 1px rgba(255, 255, 255, 0.9)'
-              }}
-            />
-          ))}
+          {/* Outer ring particles */}
+          {Array.from({ length: 42 }, (_, i) => {
+            const angle = (i * 8.5) % 360;
+            const radius = 310;
+            const x = 50 + (radius * Math.cos(angle * Math.PI / 180)) / 12;
+            const y = 50 + (radius * Math.sin(angle * Math.PI / 180) * 0.3) / 12;
+            
+            return (
+              <div
+                key={`ring-outer-${i}`}
+                className="particle absolute bg-white/40 rounded-full"
+                style={{
+                  width: `${0.4 + (i % 4) * 0.15}px`,
+                  height: `${0.4 + (i % 4) * 0.15}px`,
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  animation: `ringParticle ${25 + (i * 0.3)}s linear infinite`,
+                  animationDelay: `${i * 0.25}s`,
+                  boxShadow: '0 0 1px rgba(255, 255, 255, 0.5)'
+                }}
+              />
+            );
+          })}
           
-          {/* Larger ambient particles - slower moving */}
-          {Array.from({ length: 8 }, (_, i) => (
-            <div
-              key={`ambient-${i}`}
-              className="particle absolute bg-white/30 rounded-full"
-              style={{
-                width: `${1 + (i % 2) * 0.5}px`,
-                height: `${1 + (i % 2) * 0.5}px`,
-                top: `${40 + (i % 6) * 3}%`,
-                left: `${85 - (i * 10)}%`,
-                animation: `particleFloat ${12 + (i * 0.8)}s linear infinite`,
-                animationDelay: `${i * 1.2}s`,
-                boxShadow: '0 0 3px rgba(255, 255, 255, 0.5)'
-              }}
-            />
-          ))}
-          
-          {/* Diagonal particles - crossing the beam */}
-          {Array.from({ length: 15 }, (_, i) => (
-            <div
-              key={`diagonal-${i}`}
-              className="particle absolute bg-cyan-200/40 rounded-full"
-              style={{
-                width: `${0.4 + (i % 3) * 0.2}px`,
-                height: `${0.4 + (i % 3) * 0.2}px`,
-                top: `${35 + (i % 20) * 1.5}%`,
-                left: `${80 - (i * 5.2)}%`,
-                animation: `particleFloat ${7 + (i * 0.5)}s linear infinite`,
-                animationDelay: `${i * 0.5}s`,
-                transform: 'rotate(15deg)',
-                boxShadow: '0 0 2px rgba(0, 212, 255, 0.7)'
-              }}
-            />
-          ))}
+          {/* Cyan accent particles */}
+          {Array.from({ length: 18 }, (_, i) => {
+            const angle = (i * 20) % 360;
+            const radius = 150;
+            const x = 50 + (radius * Math.cos(angle * Math.PI / 180)) / 12;
+            const y = 50 + (radius * Math.sin(angle * Math.PI / 180) * 0.3) / 12;
+            
+            return (
+              <div
+                key={`ring-cyan-${i}`}
+                className="particle absolute bg-cyan-300/60 rounded-full"
+                style={{
+                  width: `${0.5 + (i % 2) * 0.3}px`,
+                  height: `${0.5 + (i % 2) * 0.3}px`,
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  animation: `ringParticle ${12 + (i * 0.6)}s linear infinite`,
+                  animationDelay: `${i * 0.5}s`,
+                  boxShadow: '0 0 3px rgba(0, 212, 255, 0.8)'
+                }}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
