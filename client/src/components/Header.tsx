@@ -3,7 +3,7 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border">
       <div className="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 sm:py-6 max-w-6xl mx-auto">
         {/* Logo image - x.ai style */}
-        <a href="#" className="flex items-center" data-testid="logo-link">
+        <a href="https://cshvof.com/" className="flex items-center" data-testid="logo-link">
           <img 
             src="https://firebasestorage.googleapis.com/v0/b/talos-storage.appspot.com/o/LOGO-TALOS168.png?alt=media&token=bb85fb5d-bce3-46c1-a8a5-fc2a0ec9a393"
             alt="Talos168 Logo"
